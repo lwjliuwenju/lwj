@@ -1,0 +1,126 @@
+.center {
+  width: 1170px;
+  margin: 0 auto;
+  background-color: #f7fafa;
+  border-top: 1px solid #ccc;
+  padding-bottom: 50px;
+}
+.content {
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 15px 10px;
+}
+.content > h3 {
+  font-size: 20px;
+  padding: 30px 0px;
+  font-weight: 700;
+}
+.number {
+  width: 100%;
+}
+.number > input {
+  width: 100%;
+  padding: 10px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+.empty {
+  width: 100%;
+  padding: 2px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  margin: 2px 0px;
+  font-size: 14px;
+}
+.enter {
+  width: 57%;
+}
+.enter > input {
+  width: 100%;
+  padding: 10px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  float: left;
+}
+.send {
+  width: 40%;
+  padding: 5px;
+  height: 30px;
+  line-height: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-left: 3%;
+  float: right;
+}
+.yanzheng {
+  width: 100%;
+}
+.password > input {
+  width: 100%;
+  padding: 10px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+.login {
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 54px;
+  margin-top: 10px;
+}
+.login > a {
+  text-align: center;
+  background-color: #2bde73;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+}
+.login:hover {
+  background-color: #1bb75a;
+}
+.agree {
+  width: 100%;
+}
+.agree > input {
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin-right: 10px;
+}
+.agree > span {
+  color: #d3d3d3;
+  font-weight: bold;
+  float: left;
+}
+.three {
+  width: 100%;
+  margin-top: 10px;
+}
+.line1 {
+  width: 30%;
+  height: 1px;
+  border-bottom: 1px solid #dcdbe0;
+  margin: 12px 0;
+  float: left;
+}
+.deng {
+  width: 30%;
+  float: left;
+  margin: 5px 10px 0px 25px;
+}
+.have {
+  width: 370px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 15px 0px;
+  border-top: none;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" charset="utf-8" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	
+  </head>
+  <style>
+  	*{margin:0; padding:0;}
+  	body{font-size:12px;}
+  	.content-table{width: 100%;height: 100%; border:1px solid #95B8E7; overflow:hidden;}
+  	.content-table-title{width: 100%; background: #E0ECFF; padding:5px; text-indent: 1em;font-size: 12px;font-weight: bold; color: #0E2D5F; height: 16px; line-height: 16px;}
+  	#data-table{background:#ccc; width: 100%; table-layout:fixed;}
+  	td,.data-table tr th{background: #fff; text-align: center;}
+  	#data-table tr td,#data-table tr th{padding:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  	.xzzt{background:#ccc;}
+  	#qx{width: 15px;}
+  	#tc{left: 50%;top:50%;background-color: #E0ECFF;overflow:hidden; border-color: #95B8E7;display: none;z-index: 9001;padding:5px; position: absolute;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
+  	#tc .tc-title{font-size: 12px;font-weight: bold;color: #0E2D5F;height: 18px;line-height: 18px;}
+  	#tc .tc-content{overflow:hidden; border:1px solid #95B8E7; height: 90%; width: 100%; background:#fff;}
+  	#tc #tc-close{background: url('../images/panel_tools.png') no-repeat -16px 0px;width: 16px; height: 16px;overflow: hidden;z-index: 9002; position: absolute; top:5px; right: 10px;padding: 0;}
+  	#tc #tc-data{display:none;}
+  </style>
+  <style>
+  </style>
+  <body>
+  	<div class="content-table">
+  		<div class="content-table-title">申请单管理</div>
+	    <table cellspacing="1" id="data-table" class="data-table" data-url="proposer_findAll.action">
+	    	<tr>
+	    		<th id="qx"><input type="checkbox" /></th>
+	    		<th data-col="id" data-hidden="true" style="display: none;">科室名称</th>
+	    		<th data-col="depName">科室名称</th>
+	    		<th data-col="depName">申请时间</th>
+	    		<th data-col="depName">申请服务</th>
+	    		<th data-col="depName">返修</th>
+	    		<th data-col="depName">响应次数</th>
+	    		<th data-col="depName">外修</th>
+	    		<th data-col="depName">响应时间</th>
+	    		<th data-col="depName">响应人员</th>
+	    		<th data-col="depName">已用工时</th>
+	    		<th data-col="depName">申请人</th>
+	    		<th data-col="depName">响应科室名称</th>
+	    		<th data-col="depName">评价</th>
+	    		<th data-col="depName">完成时间</th>
+	    		<th data-col="depName">取货人</th>
+	    		<th data-col="depName">物品名称</th>
+	    		<th data-col="depName">所属部门</th>
+	    		<th data-col="depName">状态</th>
+	    	</tr>
+	    </table>
+  	</div>
+  	<div id="tc">
+  		<div id="tc-data"></div>
+  		<div id="tc-close"></div>
+  		<div id="tc-title" class="tc-title">头部</div>
+  		<iframe id="tc-content" class="tc-content" name="tc-content" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no">
+  		</iframe>
+  	</div>
+  </body>
+  <script type="text/javascript" src="../../Js/jquery.min.js"></script>
+  <script type="text/javascript">
+  	$(function() {
+	  	var host = window.location.host;
+	    var windowPath = "http://" + host + "/";
+	    var $table = $("#data-table");
+	    var url = windowPath + $table.attr("data-url");
+	    var $tds = $("#data-table tr th:gt(0)");
+	    
+	    
+	    function getdata(){
+	    	$.post(url,function(data){
+	    		
+	    	});
+	    }
+	function loaddata(data){
+		$tds.remove();
+    	var rows = data;
+    	var tr = '';
+    	for (var int = 0; int < rows.length; int++) {
+			tr += "<tr class='row'><td><input class='xz' type='checkbox' /></td>";
+		    jQuery.each($tds, function(i, td) {
+		    	var tdCol = undefined;
+		    	var col = td.getAttribute("data-col"); 
+		    	var colhidden = td.getAttribute("data-hidden"); 
+		    	var hiddenstyle = "";
+		    	if(colhidden == "true"){
+		    		hiddenstyle = "style='display:none;'";
+		    	}
+		    	var val = rows[int][col];
+		    	if(typeof(val)!="undefined"){
+		    		tdCol = "<td "+ hiddenstyle +" title=" + val + ">" + val + "</td>";
+		    	}else{
+		    		tdCol = "<td "+ hiddenstyle +" ></td>";
+		    	}
+		    	tr += tdCol;
+			});
+			tr += "</tr>";
+			$table.append(tr);
+			tr = '';
+		}
+	    }
+	    
+	    $table.on("click",".row",function(){
+	    	var $row = $(this).find(".xz");
+	    	if($row.prop("checked")){
+		    	$row.removeAttr("checked");
+		    	$table.find($(this)).find("td").removeClass("xzzt");
+	    	}else{
+	    		$row.prop("checked","true");
+	    		$table.find($(this)).find("td").addClass("xzzt");
+	    		$row.trigger("create");
+	    	}
+	    });
+	    
+	    $("#qx input").click(function(){
+	    	var $xzs = $(".xz");
+	    	if(!$(this).is(':checked')){
+		    	$xzs.removeAttr("checked");
+		    	$table.find("td").removeClass("xzzt");
+	    	}else{
+	    		$xzs.prop("checked","true");
+	    		$table.find("td").addClass("xzzt");
+	    		$xzs.trigger("create");
+	    	}
+	    });
+	    $("#tc-close").click(function(){
+	    	$("#tc").css("display","none");
+	    });
+	    function tc(url,width,height,title){
+	    	$("#tc-title").text(title);
+	    	$("#tc").css("width",width);
+	    	$("#tc").css("height",height);
+	    	$("#tc").css("margin-left",width/2/-1);
+	    	$("#tc").css("margin-top",height/2/-1);
+	    	$("#tc-content").prop("src",url);
+	    	$("#tc").css("display","block");
+	    }
+	    //弹窗使用方式
+	    //tc("../login.jsp",600,200,"测试");
+	    
+	    function getSelectCol(){
+	    	var $cols = $table.find(".xz:checked");
+	    	return $cols;
+	    }
+	    //iframe  使用父iframe
+	    //parent.document.getElementById("myH1").innerHTML
+	    
+  	});
+  </script>
+</html>

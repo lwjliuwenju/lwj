@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" namespace="/" extends="all">
+		<action name="login_*" method="{1}" class="userLoginAction">
+		</action>
+		<action name="user_*" method="{1}" class="userAction">
+			<result>/views/user/${url}.jsp</result>
+		</action>
+		<action name="fol_*" method="{1}" class="folAction">
+			<result name="success">/views/folder/${url}.jsp</result>
+		</action>
+		<action name="menu_*" method="{1}" class="menuAction">
+			<result name="success">/views/menu/${url}.jsp</result>
+		</action>
+		<action name="role_*" method="{1}" class="roleAction">
+		   <result name="success">/views/role/${url}.jsp</result>
+		</action>
+		<action name="dep_*" method="{1}" class="depAction">
+			<result name="success">/views/department/${url}.jsp</result>
+		</action>
+		<action name="proposer_*" method="{1}" class="proposerAction">
+			<result name="success">/views/serviceform/${url}.jsp</result>
+		</action>
+		<action name="hall" method="hall" class="proposerAction">
+			<result name="success">/views/serviceform/${url}.jsp</result>
+		</action>
+		<action name="reponse_*" method="{1}" class="reponseAction">
+			<result name="success">/views/responsedepartment/${url}.jsp</result>
+		</action>
+		<action name="project_*" method="{1}" class="projectAction">
+			<result name="success">/views/projectform/${url}.jsp</result>
+		</action>
+		<action name="supplies_*" method="{1}" class="suppliesAction">
+			<result name="success">/views/supplies/${url}.jsp</result>
+		</action>
+		<action name="suppliesproposer_*" method="{1}" class="suppliesProposerAction">
+			<result name="success">/views/suppliesProposer/${url}.jsp</result>
+		</action> 
+		<action name="data_*" method="{1}" class="dataAction">
+			<result name="success">/views/data/${url}.jsp</result>
+		</action>
+		<action name="param_*" method="{1}" class="paramAction">
+			<result name="success">/views/param/${url}.jsp</result>
+		</action>
+		<action name="staff_*" method="{1}" class="staffAction">
+			<result name="success">/views/staff/${url}.jsp</result>
+		</action>
+		<action name="goods_*" method="{1}" class="goodsAction">
+			<result name="success">/views/transport/${url}.jsp</result>
+		</action>
+	</package>
+</struts>

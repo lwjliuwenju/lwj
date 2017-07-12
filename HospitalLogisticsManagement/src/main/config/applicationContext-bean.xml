@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 》》》》》》》》》》》》》基础支持《《《《《《《《《《《《《《《 -->
+	<!-- <bean id="baseDao" class="com.sj.privilegemanagement.dao.impl.BaseDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory"></property> </bean> -->
+	<!-- 》》》》》》》》》》》》》DAO层《《《《《《《《《《《《《《《 -->
+	<bean id="userDao" class="com.sj.privilegemanagement.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="roleDao" class="com.sj.privilegemanagement.dao.impl.RoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="menuDao" class="com.sj.privilegemanagement.dao.impl.MenuDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userOfRoleDao" class="com.sj.privilegemanagement.dao.impl.UserOfRoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="menuOfRoleDao" class="com.sj.privilegemanagement.dao.impl.MenuOfRoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="adminPassDao" class="com.sj.privilegemanagement.dao.impl.AdminPassDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="folderEntityDao" class="com.sj.privilegemanagement.dao.impl.FolderEntityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 耗材 -->
+	<bean id="suppliesDao" class="com.sj.privilegemanagement.dao.impl.SuppliesDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 科室 -->
+	<bean id="depDao" class="com.sj.privilegemanagement.dao.impl.DepDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 服务申请表 -->
+	<bean id="proposerDao" class="com.sj.privilegemanagement.dao.impl.ProposerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--项目表 -->
+	<bean id="projectDao" class="com.sj.privilegemanagement.dao.impl.ProjectDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="suppliesProposerDao"
+		class="com.sj.privilegemanagement.dao.impl.SuppliesProposerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 参数dao -->
+	<bean id="parameterDao" class="com.sj.common.dao.impl.ParameterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 科员dao -->
+	<bean id="staffDao" class="com.sj.privilegemanagement.dao.impl.StaffDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--物品dao  -->
+	<bean id="goodsDao" class="com.sj.privilegemanagement.dao.impl.GoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 科员和申请单dao -->
+	<bean id ="staffOfProposerDao" class="com.sj.privilegemanagement.dao.impl.StaffOfProposerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--运输部门和申请单dao  -->
+	<bean id ="transportOfProposerDao" class="com.sj.privilegemanagement.dao.impl.TransportOfProposerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id ="userOfDepDao" class="com.sj.privilegemanagement.dao.impl.UserOfDepDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 》》》》》》》》》》》》》Manager层《《《《《《《《《《《《《《《 -->
+	<bean id="transportOfProposerManager" class="com.sj.privilegemanagement.manager.impl.TransportOfProposerManagerImpl">
+		<property name="baseDao" ref="transportOfProposerDao"></property>
+	</bean>
+	<bean id="staffOfProposerManager" class="com.sj.privilegemanagement.manager.impl.StaffOfProposerManagerImpl">
+		<property name="baseDao" ref="staffOfProposerDao"></property>
+	</bean>
+	<bean id="staffManager" class="com.sj.privilegemanagement.manager.impl.StaffManagerImpl">
+		<property name="baseDao" ref="staffDao"></property>
+	</bean>
+	<bean id="goodsManager" class="com.sj.privilegemanagement.manager.impl.GoodsManagerImpl">
+		<property name="baseDao" ref="goodsDao"></property>
+	</bean>
+	<bean id="folderEntityManager"
+		class="com.sj.privilegemanagement.manager.impl.FolderEntityManagerImpl">
+		<property name="baseDao" ref="folderEntityDao"></property>
+	</bean>
+	<bean id="adminManager"
+		class="com.sj.privilegemanagement.manager.impl.AdminPassManagerImpl">
+		<property name="baseDao" ref="adminPassDao"></property>
+	</bean>
+	<bean id="userManager" class="com.sj.privilegemanagement.manager.impl.UserManagerImpl">
+		<property name="baseDao" ref="userDao"></property>
+		<property name="userOfDepDao" ref="userOfDepDao"></property>
+		<property name="adminPassManager" ref="adminManager"></property>
+		<property name="userOfRoleDao" ref="userOfRoleDao"></property>
+		<property name="depDao" ref="depDao"></property>
+	</bean>
+	<bean id="roleManager" class="com.sj.privilegemanagement.manager.impl.RoleManagerImpl">
+		<property name="menuOfRoleDao" ref="menuOfRoleDao"></property>
+		<property name="menuDao" ref="menuDao"></property>
+		<property name="baseDao" ref="roleDao"></property>
+		<property name="userOfRoleDao" ref="userOfRoleDao"></property>
+		<property name="shiroUtils" ref="filterChainDefinitionMapBuilder"></property>
+	</bean>
+	<bean id="menuManager" class="com.sj.privilegemanagement.manager.impl.MenuManagerImpl">
+		<property name="folderEntityManager" ref="folderEntityManager"></property>
+		<property name="baseDao" ref="menuDao"></property>
+		<property name="menuOfRoleDao" ref="menuOfRoleDao"></property>
+		<property name="shiroUtils" ref="filterChainDefinitionMapBuilder"></property>
+	</bean>
+	<bean id="depManager" class="com.sj.privilegemanagement.manager.impl.DepManagerImpl">
+		<property name="baseDao" ref="depDao"></property>
+		<property name="depDao" ref="depDao"></property>
+		<property name="userOfDepDao" ref="userOfDepDao"></property>
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="proposerManager"
+		class="com.sj.privilegemanagement.manager.impl.ProposerManagerImpl">
+		<property name="baseDao" ref="proposerDao"></property>
+		<property name="depDao" ref="depDao"></property>
+		<property name="proposerDao" ref="proposerDao"></property>
+		<property name="projectDao" ref="projectDao"></property>
+	</bean>
+	<bean id="projectManager"
+		class="com.sj.privilegemanagement.manager.impl.ProjectManagerImpl">
+		<property name="baseDao" ref="projectDao"></property>
+		<property name="projectDao" ref="projectDao"></property>
+		<property name="depDao" ref="depDao"></property>
+	</bean>
+	<bean id="suppliesManager"
+		class="com.sj.privilegemanagement.manager.impl.SuppliesManagerImpl">
+		<property name="baseDao" ref="suppliesDao"></property>
+		<property name="suppliesDao" ref="suppliesDao"></property>
+		<property name="suppliesProposerDao" ref="suppliesProposerDao"></property>
+		<property name="depDao" ref="depDao"></property>
+	</bean>
+	<bean id="suppliesProposerManager"
+		class="com.sj.privilegemanagement.manager.impl.SuppliesProposerManagerImpl">
+		<property name="baseDao" ref="suppliesProposerDao"></property>
+		<property name="suppliesProposerDao" ref="suppliesProposerDao"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="depDao" ref="depDao"></property>
+		<property name="suppliesDao" ref="suppliesDao"></property>
+	</bean>
+	<bean id="parameterManager" class="com.sj.common.manager.impl.ParameterManagerImpl">
+		<property name="baseDao" ref="parameterDao"></property>
+	</bean>
+	<!-- 》》》》》》》》》》》》》Action层《《《《《《《《《《《《《《《 -->
+	<bean id="staffAction" class ="com.sj.privilegemanagement.action.StaffAction">
+		<property name="baseManager" ref="staffManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+	</bean>
+	<bean id="paramAction" class="com.sj.common.action.ParamAction">
+		<property name="baseManager" ref="parameterManager"></property>
+		<property name="customScheduledJob" ref="scheduledJob"></property>
+	</bean>
+	<bean id="suppliesAction" class="com.sj.privilegemanagement.action.SuppliesAction">
+		<property name="baseManager" ref="suppliesManager"></property>
+		<property name="userManager" ref="userManager"></property>
+		<property name="suppliesManager" ref="suppliesManager"></property>
+	</bean>
+	<bean id="userLoginAction" scope="prototype" class="com.sj.login.UserLoginAction">
+		<property name="userService" ref="userManager"></property>
+		<property name="menuManager" ref="menuManager"></property>
+	</bean>
+	<bean id="userAction" class="com.sj.privilegemanagement.action.UserAction"
+		scope="prototype">
+		<property name="baseManager" ref="userManager"></property>
+		<property name="adminPassManager" ref="adminManager"></property>
+		<property name="userManager" ref="userManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+	</bean>
+	<bean id="folAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.FolAction">
+		<property name="baseManager" ref="folderEntityManager"></property>
+	</bean>
+	<bean id="menuAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.MenuAction">
+		<property name="baseManager" ref="menuManager"></property>
+	</bean>
+	<bean id="roleAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.RoleAction">
+		<property name="baseManager" ref="roleManager"></property>
+	</bean>
+	<bean id="depAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.DepAction">
+		<property name="baseManager" ref="depManager"></property>
+		<property name="userManager" ref="userManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+	</bean>
+	<bean id="proposerAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.ProposerAction">
+		<property name="baseManager" ref="proposerManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="suppliesProposerManager" ref="suppliesProposerManager"></property>
+		<property name="projectManager" ref="projectManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+		<property name="staffOfProposerManager" ref="staffOfProposerManager"></property>
+		<property name="suppliesManager" ref="suppliesManager"></property>
+		<property name="goodsManager" ref="goodsManager"></property>
+		<property name="transportOfProposerManager" ref="transportOfProposerManager"></property>
+	</bean>
+	<bean id="reponseAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.ReponseAction">
+		<property name="depManager" ref="depManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+		<property name="suppliesProposerManager" ref="suppliesProposerManager"></property>
+		<property name="staffOfProposerManager" ref="staffOfProposerManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+	</bean>
+	<bean id="projectAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.ProjectAction">
+		<property name="baseManager" ref="projectManager"></property>
+		<property name="projectManager" ref="projectManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+	</bean>
+	<bean id="dataAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.DataAction">
+		<property name="baseManager" ref="projectManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+		<property name="staffOfProposerManager" ref="staffOfProposerManager"></property>
+		<property name="projectManager" ref="projectManager"></property>
+	</bean>
+	<bean id="suppliesProposerAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.SuppliesproposerAction">
+		<property name="baseManager" ref="suppliesProposerManager"></property>
+		<property name="suppliesProposerManager" ref="suppliesProposerManager"></property>
+		<property name="suppliesManager" ref="suppliesManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+		<property name="staffOfProposerManager" ref="staffOfProposerManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+	</bean>
+	<bean id="goodsAction" scope="prototype"
+		class="com.sj.privilegemanagement.action.GoodsAction">
+		<property name="goodsManager" ref="goodsManager"></property>
+		<property name="depManager" ref="depManager"></property>
+		<property name="proposerManager" ref="proposerManager"></property>
+		<property name="staffOfProposerManager" ref="staffOfProposerManager"></property>
+		<property name="staffManager" ref="staffManager"></property>
+		<property name="transportOfProposerManager" ref="transportOfProposerManager"></property>
+	</bean>
+	<!-- <bean id="suppliesProposerAction" scope="prototype" class="com.sj.privilegemanagement.action.SuppliesProposerAction"> 
+		<property name="baseManager" ref="suppliesProposerManager"></property> <property 
+		name="suppliesProposerManager" ref="suppliesProposerManager"></property> 
+		<property name="suppliesManager" ref="suppliesManager"></property> </bean> -->
+</beans>

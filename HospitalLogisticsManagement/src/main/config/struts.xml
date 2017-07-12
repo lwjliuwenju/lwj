@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- <constant name="struts.convention.package.locators" value="controller"/> -->
+	<include file="struct-action.xml"></include>
+	<package name="all" extends="struts-default">
+		<!-- 定义一个拦截器 -->  
+        <interceptors>  
+            <interceptor name="authority"  
+                class="interceptor">  
+            </interceptor>  
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="mydefault">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="authority" />  
+            </interceptor-stack>  
+        </interceptors>
+		<!-- 定义默认拦截器 -->
+        <default-interceptor-ref name="mydefault" />
+		<global-results>  
+	        <result name="KeyError">/keyError.jsp</result>  
+	  	</global-results>
+	</package>
+	<constant name="struts.action.excludePattern" value="^ws://.+$,/ws/.*"></constant>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.multipart.maxSize" value="1000000000"></constant>
+</struts>

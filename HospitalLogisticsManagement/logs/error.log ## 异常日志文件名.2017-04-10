@@ -1,0 +1,540 @@
+2017-04-10 08:57:43  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2017-04-10 08:57:43  [ main:54 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 08:57:43  [ main:55 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 08:57:43  [ main:56 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 08:57:43  [ main:60 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:43  [ main:61 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:43  [ main:63 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 08:57:43  [ main:64 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 08:57:43  [ main:68 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Mon Apr 10 08:57:43 CST 2017]; root of context hierarchy
+2017-04-10 08:57:44  [ main:152 ] - [ DEBUG ]  Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2017-04-10 08:57:44  [ main:182 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 08:57:44  [ main:183 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:183 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:184 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 08:57:44  [ main:185 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 08:57:44  [ main:186 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:187 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:187 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 08:57:44  [ main:193 ] - [ DEBUG ]  Resolved location pattern [classpath*:WEB-INF/applicationContext*.xml] to resources []
+2017-04-10 08:57:44  [ main:193 ] - [ DEBUG ]  Loaded 0 bean definitions from location pattern [classpath*:WEB-INF/applicationContext*.xml]
+2017-04-10 08:57:44  [ main:194 ] - [ DEBUG ]  Bean factory for Root WebApplicationContext: org.springframework.beans.factory.support.DefaultListableBeanFactory@5ceecfee: defining beans []; root of factory hierarchy
+2017-04-10 08:57:44  [ main:213 ] - [ DEBUG ]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@633fd91]
+2017-04-10 08:57:44  [ main:215 ] - [ DEBUG ]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@df921b1]
+2017-04-10 08:57:44  [ main:217 ] - [ DEBUG ]  Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@62b790a5]
+2017-04-10 08:57:44  [ main:218 ] - [ INFO ]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5ceecfee: defining beans []; root of factory hierarchy
+2017-04-10 08:57:44  [ main:219 ] - [ DEBUG ]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@766a49c7]
+2017-04-10 08:57:44  [ main:220 ] - [ DEBUG ]  Returning cached instance of singleton bean 'lifecycleProcessor'
+2017-04-10 08:57:44  [ main:221 ] - [ DEBUG ]  Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2017-04-10 08:57:44  [ main:221 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 216 ms
+2017-04-10 08:57:44  [ main:224 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 08:57:44  [ main:224 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:224 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:225 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:225 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:226 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 08:57:44  [ main:226 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 08:57:44  [ main:227 ] - [ DEBUG ]  Initializing filter 'encodingFilter'
+2017-04-10 08:57:44  [ main:262 ] - [ DEBUG ]  Filter 'encodingFilter' configured successfully
+2017-04-10 08:57:44  [ main:298 ] - [ DEBUG ]  Loading action configurations from: struts-default.xml
+2017-04-10 08:57:44  [ main:300 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-core/2.3.1/struts2-core-2.3.1.jar!/struts-default.xml
+2017-04-10 08:57:44  [ main:368 ] - [ DEBUG ]  Loaded action configuration from: struts-default.xml
+2017-04-10 08:57:44  [ main:373 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2017-04-10 08:57:44  [ main:382 ] - [ DEBUG ]  Loaded type: name:xwork impl:com.opensymphony.xwork2.ObjectFactory
+2017-04-10 08:57:44  [ main:386 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:struts impl:org.apache.struts2.impl.StrutsObjectFactory
+2017-04-10 08:57:44  [ main:388 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:xwork impl:com.opensymphony.xwork2.DefaultActionProxyFactory
+2017-04-10 08:57:44  [ main:389 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:struts impl:org.apache.struts2.impl.StrutsActionProxyFactory
+2017-04-10 08:57:44  [ main:393 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:tiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 08:57:44  [ main:393 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:notiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 08:57:44  [ main:394 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:struts impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 08:57:44  [ main:395 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:struts impl:com.opensymphony.xwork2.util.WildcardHelper
+2017-04-10 08:57:44  [ main:396 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:namedVariable impl:com.opensymphony.xwork2.util.NamedVariablePatternMatcher
+2017-04-10 08:57:44  [ main:397 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:regex impl:org.apache.struts2.util.RegexPatternMatcher
+2017-04-10 08:57:44  [ main:401 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:struts impl:org.apache.struts2.dispatcher.mapper.DefaultActionMapper
+2017-04-10 08:57:44  [ main:402 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:composite impl:org.apache.struts2.dispatcher.mapper.CompositeActionMapper
+2017-04-10 08:57:44  [ main:403 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful impl:org.apache.struts2.dispatcher.mapper.RestfulActionMapper
+2017-04-10 08:57:44  [ main:405 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful2 impl:org.apache.struts2.dispatcher.mapper.Restful2ActionMapper
+2017-04-10 08:57:44  [ main:407 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:struts impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 08:57:44  [ main:408 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:jakarta impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 08:57:44  [ main:409 ] - [ DEBUG ]  Loaded type:org.apache.struts2.views.TagLibrary name:s impl:org.apache.struts2.views.DefaultTagLibrary
+2017-04-10 08:57:44  [ main:413 ] - [ DEBUG ]  Loaded type: name:struts impl:org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 08:57:44  [ main:416 ] - [ DEBUG ]  Unable to load optional class: java.lang.NoClassDefFoundError: org/apache/velocity/VelocityContext
+2017-04-10 08:57:44  [ main:417 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.components.template.TemplateEngineManager
+2017-04-10 08:57:44  [ main:422 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:ftl impl:org.apache.struts2.components.template.FreemarkerTemplateEngine
+2017-04-10 08:57:44  [ main:424 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:vm impl:org.apache.struts2.components.template.VelocityTemplateEngine
+2017-04-10 08:57:44  [ main:427 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:jsp impl:org.apache.struts2.components.template.JspTemplateEngine
+2017-04-10 08:57:44  [ main:431 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:struts impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 08:57:44  [ main:432 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:xwork1 impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 08:57:44  [ main:437 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.conversion.impl.XWorkBasicConverter
+2017-04-10 08:57:44  [ main:440 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:xwork1 impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 08:57:44  [ main:440 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:struts impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 08:57:44  [ main:443 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.UrlRenderer name:struts impl:org.apache.struts2.components.ServletUrlRenderer
+2017-04-10 08:57:44  [ main:445 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.ValueStackFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlValueStackFactory
+2017-04-10 08:57:44  [ main:448 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionProvider name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionProvider
+2017-04-10 08:57:44  [ main:449 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionContextFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionContextFactory
+2017-04-10 08:57:44  [ main:450 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:system impl:com.opensymphony.xwork2.DefaultTextProvider
+2017-04-10 08:57:44  [ main:456 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.NullHandler name:java.lang.Object impl:com.opensymphony.xwork2.conversion.impl.InstantiatingNullHandler
+2017-04-10 08:57:44  [ main:460 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:struts impl:com.opensymphony.xwork2.validator.AnnotationActionValidatorManager
+2017-04-10 08:57:44  [ main:462 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:no-annotations impl:com.opensymphony.xwork2.validator.DefaultActionValidatorManager
+2017-04-10 08:57:44  [ main:464 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFactory name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFactory
+2017-04-10 08:57:44  [ main:465 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFileParser name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFileParser
+2017-04-10 08:57:44  [ main:469 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.ognl.OgnlUtil
+2017-04-10 08:57:44  [ main:473 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 08:57:44  [ main:475 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.ObjectAccessor
+2017-04-10 08:57:44  [ main:478 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Iterator impl:com.opensymphony.xwork2.ognl.accessor.XWorkIteratorPropertyAccessor
+2017-04-10 08:57:44  [ main:480 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Enumeration impl:com.opensymphony.xwork2.ognl.accessor.XWorkEnumerationAccessor
+2017-04-10 08:57:44  [ main:482 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.List impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 08:57:44  [ main:485 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Set impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 08:57:44  [ main:487 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Map impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 08:57:44  [ main:488 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Collection impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 08:57:44  [ main:489 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.ognl.ObjectProxy impl:com.opensymphony.xwork2.ognl.accessor.ObjectProxyPropertyAccessor
+2017-04-10 08:57:44  [ main:491 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.XWorkMethodAccessor
+2017-04-10 08:57:44  [ main:491 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 08:57:44  [ main:492 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.views.jsp.ui.OgnlTool
+2017-04-10 08:57:44  [ main:495 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.StaticContentLoader name:struts impl:org.apache.struts2.dispatcher.DefaultStaticContentLoader
+2017-04-10 08:57:44  [ main:496 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.UnknownHandlerManager name:struts impl:com.opensymphony.xwork2.DefaultUnknownHandlerManager
+2017-04-10 08:57:44  [ main:497 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.ArrayList impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 08:57:44  [ main:497 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashSet impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 08:57:44  [ main:498 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashMap impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 08:57:44  [ main:498 ] - [ DEBUG ]  Loading action configurations from: struts-plugin.xml
+2017-04-10 08:57:44  [ main:499 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-spring-plugin/2.3.1/struts2-spring-plugin-2.3.1.jar!/struts-plugin.xml
+2017-04-10 08:57:44  [ main:507 ] - [ DEBUG ]  Loaded action configuration from: struts-plugin.xml
+2017-04-10 08:57:44  [ main:507 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2017-04-10 08:57:44  [ main:510 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:spring impl:org.apache.struts2.spring.StrutsSpringObjectFactory
+2017-04-10 08:57:44  [ main:511 ] - [ DEBUG ]  Loading action configurations from: struts.xml
+2017-04-10 08:57:44  [ main:513 ] - [ INFO ]  Unable to locate configuration files of the name struts.xml, skipping
+2017-04-10 08:57:44  [ main:513 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2017-04-10 08:57:44  [ main:515 ] - [ DEBUG ]  struts.properties missing
+2017-04-10 08:57:44  [ main:517 ] - [ INFO ]  Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2017-04-10 08:57:44  [ main:517 ] - [ INFO ]  Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 08:57:44  [ main:518 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2017-04-10 08:57:44  [ main:518 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2017-04-10 08:57:44  [ main:518 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2017-04-10 08:57:44  [ main:519 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2017-04-10 08:57:44  [ main:519 ] - [ INFO ]  Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2017-04-10 08:57:44  [ main:520 ] - [ INFO ]  Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 08:57:44  [ main:532 ] - [ DEBUG ]  Choosing bean (struts) for class org.apache.struts2.views.velocity.VelocityManager to be loaded from the ObjectFactory
+2017-04-10 08:57:44  [ main:533 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2017-04-10 08:57:44  [ main:533 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2017-04-10 08:57:44  [ main:533 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2017-04-10 08:57:44  [ main:534 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2017-04-10 08:57:44  [ main:534 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2017-04-10 08:57:44  [ main:534 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2017-04-10 08:57:44  [ main:534 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2017-04-10 08:57:44  [ main:535 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2017-04-10 08:57:44  [ main:539 ] - [ DEBUG ]  Added default resource bundle 'org/apache/struts2/struts-messages' to default resource bundles = [org/apache/struts2/struts-messages, com/opensymphony/xwork2/xwork-messages]
+2017-04-10 08:57:44  [ main:609 ] - [ INFO ]  Initializing Struts-Spring integration...
+2017-04-10 08:57:44  [ main:610 ] - [ INFO ]  Setting autowire strategy to name
+2017-04-10 08:57:44  [ main:610 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2017-04-10 08:57:44  [ main:619 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:struts-default namespace: parents:[]}
+2017-04-10 08:57:44  [ main:837 ] - [ DEBUG ]  Loading validator definitions.
+2017-04-10 08:57:45  [ main:1160 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 08:57:45  [ main:1193 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 08:57:45  [ main:1212 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 08:57:45  [ main:1249 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:spring-default namespace: parents:[]}
+2017-04-10 09:33:16  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2017-04-10 09:33:16  [ main:68 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 09:33:16  [ main:71 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:72 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:79 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:80 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:81 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:82 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 09:33:16  [ main:87 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Mon Apr 10 09:33:16 CST 2017]; root of context hierarchy
+2017-04-10 09:33:16  [ main:253 ] - [ DEBUG ]  Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2017-04-10 09:33:16  [ main:290 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 09:33:16  [ main:290 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:291 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:291 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 09:33:16  [ main:292 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 09:33:16  [ main:293 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:295 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:295 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 09:33:16  [ main:303 ] - [ DEBUG ]  Resolved location pattern [classpath*:WEB-INF/applicationContext*.xml] to resources []
+2017-04-10 09:33:16  [ main:303 ] - [ DEBUG ]  Loaded 0 bean definitions from location pattern [classpath*:WEB-INF/applicationContext*.xml]
+2017-04-10 09:33:16  [ main:304 ] - [ DEBUG ]  Bean factory for Root WebApplicationContext: org.springframework.beans.factory.support.DefaultListableBeanFactory@6342ff7f: defining beans []; root of factory hierarchy
+2017-04-10 09:33:16  [ main:324 ] - [ DEBUG ]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@77c10a5f]
+2017-04-10 09:33:16  [ main:328 ] - [ DEBUG ]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@60a19573]
+2017-04-10 09:33:16  [ main:330 ] - [ DEBUG ]  Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@3f018494]
+2017-04-10 09:33:16  [ main:331 ] - [ INFO ]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6342ff7f: defining beans []; root of factory hierarchy
+2017-04-10 09:33:16  [ main:333 ] - [ DEBUG ]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@62b790a5]
+2017-04-10 09:33:16  [ main:334 ] - [ DEBUG ]  Returning cached instance of singleton bean 'lifecycleProcessor'
+2017-04-10 09:33:16  [ main:336 ] - [ DEBUG ]  Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2017-04-10 09:33:16  [ main:336 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 331 ms
+2017-04-10 09:33:16  [ main:341 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 09:33:16  [ main:341 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:342 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:342 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:343 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:343 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 09:33:16  [ main:344 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 09:33:16  [ main:345 ] - [ DEBUG ]  Initializing filter 'encodingFilter'
+2017-04-10 09:33:16  [ main:398 ] - [ DEBUG ]  Filter 'encodingFilter' configured successfully
+2017-04-10 09:33:16  [ main:448 ] - [ DEBUG ]  Loading action configurations from: struts-default.xml
+2017-04-10 09:33:16  [ main:451 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-core/2.3.1/struts2-core-2.3.1.jar!/struts-default.xml
+2017-04-10 09:33:16  [ main:520 ] - [ DEBUG ]  Loaded action configuration from: struts-default.xml
+2017-04-10 09:33:16  [ main:524 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2017-04-10 09:33:16  [ main:530 ] - [ DEBUG ]  Loaded type: name:xwork impl:com.opensymphony.xwork2.ObjectFactory
+2017-04-10 09:33:16  [ main:533 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:struts impl:org.apache.struts2.impl.StrutsObjectFactory
+2017-04-10 09:33:16  [ main:534 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:xwork impl:com.opensymphony.xwork2.DefaultActionProxyFactory
+2017-04-10 09:33:16  [ main:535 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:struts impl:org.apache.struts2.impl.StrutsActionProxyFactory
+2017-04-10 09:33:16  [ main:538 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:tiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 09:33:16  [ main:539 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:notiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 09:33:16  [ main:539 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:struts impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 09:33:16  [ main:541 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:struts impl:com.opensymphony.xwork2.util.WildcardHelper
+2017-04-10 09:33:16  [ main:542 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:namedVariable impl:com.opensymphony.xwork2.util.NamedVariablePatternMatcher
+2017-04-10 09:33:16  [ main:543 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:regex impl:org.apache.struts2.util.RegexPatternMatcher
+2017-04-10 09:33:16  [ main:546 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:struts impl:org.apache.struts2.dispatcher.mapper.DefaultActionMapper
+2017-04-10 09:33:16  [ main:547 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:composite impl:org.apache.struts2.dispatcher.mapper.CompositeActionMapper
+2017-04-10 09:33:16  [ main:548 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful impl:org.apache.struts2.dispatcher.mapper.RestfulActionMapper
+2017-04-10 09:33:16  [ main:549 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful2 impl:org.apache.struts2.dispatcher.mapper.Restful2ActionMapper
+2017-04-10 09:33:16  [ main:552 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:struts impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 09:33:16  [ main:552 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:jakarta impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 09:33:16  [ main:553 ] - [ DEBUG ]  Loaded type:org.apache.struts2.views.TagLibrary name:s impl:org.apache.struts2.views.DefaultTagLibrary
+2017-04-10 09:33:16  [ main:557 ] - [ DEBUG ]  Loaded type: name:struts impl:org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 09:33:16  [ main:559 ] - [ DEBUG ]  Unable to load optional class: java.lang.NoClassDefFoundError: org/apache/velocity/context/Context
+2017-04-10 09:33:16  [ main:560 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.components.template.TemplateEngineManager
+2017-04-10 09:33:16  [ main:563 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:ftl impl:org.apache.struts2.components.template.FreemarkerTemplateEngine
+2017-04-10 09:33:16  [ main:565 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:vm impl:org.apache.struts2.components.template.VelocityTemplateEngine
+2017-04-10 09:33:16  [ main:567 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:jsp impl:org.apache.struts2.components.template.JspTemplateEngine
+2017-04-10 09:33:16  [ main:568 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:struts impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 09:33:16  [ main:569 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:xwork1 impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 09:33:16  [ main:572 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.conversion.impl.XWorkBasicConverter
+2017-04-10 09:33:16  [ main:574 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:xwork1 impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 09:33:16  [ main:575 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:struts impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 09:33:16  [ main:578 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.UrlRenderer name:struts impl:org.apache.struts2.components.ServletUrlRenderer
+2017-04-10 09:33:16  [ main:584 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.ValueStackFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlValueStackFactory
+2017-04-10 09:33:16  [ main:586 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionProvider name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionProvider
+2017-04-10 09:33:16  [ main:587 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionContextFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionContextFactory
+2017-04-10 09:33:16  [ main:589 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:system impl:com.opensymphony.xwork2.DefaultTextProvider
+2017-04-10 09:33:16  [ main:590 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.NullHandler name:java.lang.Object impl:com.opensymphony.xwork2.conversion.impl.InstantiatingNullHandler
+2017-04-10 09:33:16  [ main:595 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:struts impl:com.opensymphony.xwork2.validator.AnnotationActionValidatorManager
+2017-04-10 09:33:16  [ main:599 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:no-annotations impl:com.opensymphony.xwork2.validator.DefaultActionValidatorManager
+2017-04-10 09:33:16  [ main:603 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFactory name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFactory
+2017-04-10 09:33:16  [ main:604 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFileParser name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFileParser
+2017-04-10 09:33:16  [ main:606 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.ognl.OgnlUtil
+2017-04-10 09:33:16  [ main:610 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 09:33:16  [ main:613 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.ObjectAccessor
+2017-04-10 09:33:16  [ main:614 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Iterator impl:com.opensymphony.xwork2.ognl.accessor.XWorkIteratorPropertyAccessor
+2017-04-10 09:33:16  [ main:616 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Enumeration impl:com.opensymphony.xwork2.ognl.accessor.XWorkEnumerationAccessor
+2017-04-10 09:33:16  [ main:618 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.List impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 09:33:16  [ main:620 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Set impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 09:33:16  [ main:622 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Map impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 09:33:16  [ main:622 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Collection impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 09:33:16  [ main:623 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.ognl.ObjectProxy impl:com.opensymphony.xwork2.ognl.accessor.ObjectProxyPropertyAccessor
+2017-04-10 09:33:16  [ main:626 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.XWorkMethodAccessor
+2017-04-10 09:33:16  [ main:626 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 09:33:16  [ main:627 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.views.jsp.ui.OgnlTool
+2017-04-10 09:33:16  [ main:629 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.StaticContentLoader name:struts impl:org.apache.struts2.dispatcher.DefaultStaticContentLoader
+2017-04-10 09:33:16  [ main:630 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.UnknownHandlerManager name:struts impl:com.opensymphony.xwork2.DefaultUnknownHandlerManager
+2017-04-10 09:33:16  [ main:631 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.ArrayList impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 09:33:16  [ main:631 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashSet impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 09:33:16  [ main:631 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashMap impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 09:33:16  [ main:632 ] - [ DEBUG ]  Loading action configurations from: struts-plugin.xml
+2017-04-10 09:33:16  [ main:633 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-spring-plugin/2.3.1/struts2-spring-plugin-2.3.1.jar!/struts-plugin.xml
+2017-04-10 09:33:16  [ main:643 ] - [ DEBUG ]  Loaded action configuration from: struts-plugin.xml
+2017-04-10 09:33:16  [ main:643 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2017-04-10 09:33:16  [ main:646 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:spring impl:org.apache.struts2.spring.StrutsSpringObjectFactory
+2017-04-10 09:33:16  [ main:647 ] - [ DEBUG ]  Loading action configurations from: struts.xml
+2017-04-10 09:33:16  [ main:649 ] - [ INFO ]  Unable to locate configuration files of the name struts.xml, skipping
+2017-04-10 09:33:16  [ main:649 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2017-04-10 09:33:16  [ main:651 ] - [ DEBUG ]  struts.properties missing
+2017-04-10 09:33:16  [ main:652 ] - [ INFO ]  Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2017-04-10 09:33:16  [ main:653 ] - [ INFO ]  Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 09:33:16  [ main:654 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2017-04-10 09:33:16  [ main:654 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2017-04-10 09:33:16  [ main:654 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2017-04-10 09:33:16  [ main:655 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2017-04-10 09:33:16  [ main:655 ] - [ INFO ]  Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2017-04-10 09:33:16  [ main:655 ] - [ INFO ]  Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 09:33:16  [ main:658 ] - [ DEBUG ]  Choosing bean (struts) for class org.apache.struts2.views.velocity.VelocityManager to be loaded from the ObjectFactory
+2017-04-10 09:33:16  [ main:658 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2017-04-10 09:33:16  [ main:658 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2017-04-10 09:33:16  [ main:659 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2017-04-10 09:33:16  [ main:659 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2017-04-10 09:33:16  [ main:659 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2017-04-10 09:33:16  [ main:659 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2017-04-10 09:33:16  [ main:660 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2017-04-10 09:33:16  [ main:660 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2017-04-10 09:33:16  [ main:663 ] - [ DEBUG ]  Added default resource bundle 'org/apache/struts2/struts-messages' to default resource bundles = [org/apache/struts2/struts-messages, com/opensymphony/xwork2/xwork-messages]
+2017-04-10 09:33:16  [ main:744 ] - [ INFO ]  Initializing Struts-Spring integration...
+2017-04-10 09:33:16  [ main:744 ] - [ INFO ]  Setting autowire strategy to name
+2017-04-10 09:33:16  [ main:744 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2017-04-10 09:33:16  [ main:752 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:struts-default namespace: parents:[]}
+2017-04-10 09:33:17  [ main:987 ] - [ DEBUG ]  Loading validator definitions.
+2017-04-10 09:33:17  [ main:1360 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 09:33:17  [ main:1399 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 09:33:17  [ main:1419 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 09:33:17  [ main:1471 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:spring-default namespace: parents:[]}
+2017-04-10 11:38:47  [ main:2 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2017-04-10 11:38:47  [ main:75 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 11:38:47  [ main:77 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:77 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:82 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:83 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:84 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:85 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 11:38:47  [ main:90 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Mon Apr 10 11:38:47 CST 2017]; root of context hierarchy
+2017-04-10 11:38:47  [ main:98 ] - [ DEBUG ]  Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2017-04-10 11:38:47  [ main:317 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 11:38:47  [ main:318 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:318 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:318 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 11:38:47  [ main:319 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 11:38:47  [ main:320 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:322 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:323 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 11:38:47  [ main:331 ] - [ DEBUG ]  Resolved location pattern [classpath*:WEB-INF/applicationContext*.xml] to resources []
+2017-04-10 11:38:47  [ main:331 ] - [ DEBUG ]  Loaded 0 bean definitions from location pattern [classpath*:WEB-INF/applicationContext*.xml]
+2017-04-10 11:38:47  [ main:332 ] - [ DEBUG ]  Bean factory for Root WebApplicationContext: org.springframework.beans.factory.support.DefaultListableBeanFactory@7e72a6cc: defining beans []; root of factory hierarchy
+2017-04-10 11:38:47  [ main:352 ] - [ DEBUG ]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@43982337]
+2017-04-10 11:38:47  [ main:355 ] - [ DEBUG ]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@11e355ca]
+2017-04-10 11:38:47  [ main:357 ] - [ DEBUG ]  Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@63d5874f]
+2017-04-10 11:38:47  [ main:358 ] - [ INFO ]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7e72a6cc: defining beans []; root of factory hierarchy
+2017-04-10 11:38:47  [ main:360 ] - [ DEBUG ]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@23a918c7]
+2017-04-10 11:38:47  [ main:361 ] - [ DEBUG ]  Returning cached instance of singleton bean 'lifecycleProcessor'
+2017-04-10 11:38:47  [ main:362 ] - [ DEBUG ]  Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2017-04-10 11:38:47  [ main:363 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 354 ms
+2017-04-10 11:38:47  [ main:367 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 11:38:47  [ main:367 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:368 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:368 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:369 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:370 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 11:38:47  [ main:370 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 11:38:47  [ main:371 ] - [ DEBUG ]  Initializing filter 'encodingFilter'
+2017-04-10 11:38:47  [ main:431 ] - [ DEBUG ]  Filter 'encodingFilter' configured successfully
+2017-04-10 11:38:47  [ main:463 ] - [ DEBUG ]  Loading action configurations from: struts-default.xml
+2017-04-10 11:38:47  [ main:467 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-core/2.3.1/struts2-core-2.3.1.jar!/struts-default.xml
+2017-04-10 11:38:47  [ main:532 ] - [ DEBUG ]  Loaded action configuration from: struts-default.xml
+2017-04-10 11:38:47  [ main:536 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2017-04-10 11:38:47  [ main:543 ] - [ DEBUG ]  Loaded type: name:xwork impl:com.opensymphony.xwork2.ObjectFactory
+2017-04-10 11:38:47  [ main:547 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:struts impl:org.apache.struts2.impl.StrutsObjectFactory
+2017-04-10 11:38:47  [ main:549 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:xwork impl:com.opensymphony.xwork2.DefaultActionProxyFactory
+2017-04-10 11:38:47  [ main:551 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:struts impl:org.apache.struts2.impl.StrutsActionProxyFactory
+2017-04-10 11:38:47  [ main:558 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:tiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 11:38:47  [ main:559 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:notiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 11:38:47  [ main:559 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:struts impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 11:38:47  [ main:561 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:struts impl:com.opensymphony.xwork2.util.WildcardHelper
+2017-04-10 11:38:47  [ main:562 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:namedVariable impl:com.opensymphony.xwork2.util.NamedVariablePatternMatcher
+2017-04-10 11:38:47  [ main:563 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:regex impl:org.apache.struts2.util.RegexPatternMatcher
+2017-04-10 11:38:47  [ main:568 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:struts impl:org.apache.struts2.dispatcher.mapper.DefaultActionMapper
+2017-04-10 11:38:47  [ main:570 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:composite impl:org.apache.struts2.dispatcher.mapper.CompositeActionMapper
+2017-04-10 11:38:47  [ main:571 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful impl:org.apache.struts2.dispatcher.mapper.RestfulActionMapper
+2017-04-10 11:38:47  [ main:573 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful2 impl:org.apache.struts2.dispatcher.mapper.Restful2ActionMapper
+2017-04-10 11:38:47  [ main:577 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:struts impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 11:38:47  [ main:577 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:jakarta impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 11:38:47  [ main:578 ] - [ DEBUG ]  Loaded type:org.apache.struts2.views.TagLibrary name:s impl:org.apache.struts2.views.DefaultTagLibrary
+2017-04-10 11:38:47  [ main:583 ] - [ DEBUG ]  Loaded type: name:struts impl:org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 11:38:47  [ main:592 ] - [ DEBUG ]  Unable to load optional class: java.lang.NoClassDefFoundError: org/apache/velocity/context/Context
+2017-04-10 11:38:47  [ main:593 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.components.template.TemplateEngineManager
+2017-04-10 11:38:47  [ main:598 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:ftl impl:org.apache.struts2.components.template.FreemarkerTemplateEngine
+2017-04-10 11:38:47  [ main:600 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:vm impl:org.apache.struts2.components.template.VelocityTemplateEngine
+2017-04-10 11:38:47  [ main:603 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:jsp impl:org.apache.struts2.components.template.JspTemplateEngine
+2017-04-10 11:38:47  [ main:606 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:struts impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 11:38:47  [ main:606 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:xwork1 impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 11:38:47  [ main:609 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.conversion.impl.XWorkBasicConverter
+2017-04-10 11:38:47  [ main:611 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:xwork1 impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 11:38:47  [ main:612 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:struts impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 11:38:47  [ main:614 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.UrlRenderer name:struts impl:org.apache.struts2.components.ServletUrlRenderer
+2017-04-10 11:38:47  [ main:615 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.ValueStackFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlValueStackFactory
+2017-04-10 11:38:47  [ main:617 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionProvider name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionProvider
+2017-04-10 11:38:47  [ main:618 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionContextFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionContextFactory
+2017-04-10 11:38:47  [ main:619 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:system impl:com.opensymphony.xwork2.DefaultTextProvider
+2017-04-10 11:38:47  [ main:621 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.NullHandler name:java.lang.Object impl:com.opensymphony.xwork2.conversion.impl.InstantiatingNullHandler
+2017-04-10 11:38:47  [ main:623 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:struts impl:com.opensymphony.xwork2.validator.AnnotationActionValidatorManager
+2017-04-10 11:38:47  [ main:624 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:no-annotations impl:com.opensymphony.xwork2.validator.DefaultActionValidatorManager
+2017-04-10 11:38:47  [ main:626 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFactory name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFactory
+2017-04-10 11:38:47  [ main:627 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFileParser name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFileParser
+2017-04-10 11:38:47  [ main:629 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.ognl.OgnlUtil
+2017-04-10 11:38:47  [ main:632 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 11:38:47  [ main:633 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.ObjectAccessor
+2017-04-10 11:38:47  [ main:634 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Iterator impl:com.opensymphony.xwork2.ognl.accessor.XWorkIteratorPropertyAccessor
+2017-04-10 11:38:47  [ main:636 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Enumeration impl:com.opensymphony.xwork2.ognl.accessor.XWorkEnumerationAccessor
+2017-04-10 11:38:47  [ main:638 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.List impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 11:38:47  [ main:640 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Set impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 11:38:47  [ main:642 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Map impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 11:38:47  [ main:643 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Collection impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 11:38:47  [ main:644 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.ognl.ObjectProxy impl:com.opensymphony.xwork2.ognl.accessor.ObjectProxyPropertyAccessor
+2017-04-10 11:38:47  [ main:645 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.XWorkMethodAccessor
+2017-04-10 11:38:47  [ main:646 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 11:38:47  [ main:647 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.views.jsp.ui.OgnlTool
+2017-04-10 11:38:47  [ main:649 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.StaticContentLoader name:struts impl:org.apache.struts2.dispatcher.DefaultStaticContentLoader
+2017-04-10 11:38:47  [ main:651 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.UnknownHandlerManager name:struts impl:com.opensymphony.xwork2.DefaultUnknownHandlerManager
+2017-04-10 11:38:47  [ main:651 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.ArrayList impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 11:38:47  [ main:651 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashSet impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 11:38:47  [ main:652 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashMap impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 11:38:47  [ main:653 ] - [ DEBUG ]  Loading action configurations from: struts-plugin.xml
+2017-04-10 11:38:47  [ main:654 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-spring-plugin/2.3.1/struts2-spring-plugin-2.3.1.jar!/struts-plugin.xml
+2017-04-10 11:38:47  [ main:674 ] - [ DEBUG ]  Loaded action configuration from: struts-plugin.xml
+2017-04-10 11:38:47  [ main:675 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2017-04-10 11:38:47  [ main:678 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:spring impl:org.apache.struts2.spring.StrutsSpringObjectFactory
+2017-04-10 11:38:47  [ main:679 ] - [ DEBUG ]  Loading action configurations from: struts.xml
+2017-04-10 11:38:47  [ main:680 ] - [ INFO ]  Unable to locate configuration files of the name struts.xml, skipping
+2017-04-10 11:38:47  [ main:681 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2017-04-10 11:38:47  [ main:683 ] - [ DEBUG ]  struts.properties missing
+2017-04-10 11:38:47  [ main:685 ] - [ INFO ]  Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2017-04-10 11:38:47  [ main:686 ] - [ INFO ]  Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 11:38:47  [ main:686 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2017-04-10 11:38:47  [ main:687 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2017-04-10 11:38:47  [ main:687 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2017-04-10 11:38:47  [ main:687 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2017-04-10 11:38:47  [ main:688 ] - [ INFO ]  Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2017-04-10 11:38:47  [ main:688 ] - [ INFO ]  Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 11:38:47  [ main:693 ] - [ DEBUG ]  Choosing bean (struts) for class org.apache.struts2.views.velocity.VelocityManager to be loaded from the ObjectFactory
+2017-04-10 11:38:47  [ main:694 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2017-04-10 11:38:47  [ main:694 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2017-04-10 11:38:47  [ main:694 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2017-04-10 11:38:47  [ main:694 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2017-04-10 11:38:47  [ main:695 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2017-04-10 11:38:47  [ main:695 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2017-04-10 11:38:47  [ main:695 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2017-04-10 11:38:47  [ main:695 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2017-04-10 11:38:47  [ main:699 ] - [ DEBUG ]  Added default resource bundle 'org/apache/struts2/struts-messages' to default resource bundles = [org/apache/struts2/struts-messages, com/opensymphony/xwork2/xwork-messages]
+2017-04-10 11:38:47  [ main:758 ] - [ INFO ]  Initializing Struts-Spring integration...
+2017-04-10 11:38:47  [ main:759 ] - [ INFO ]  Setting autowire strategy to name
+2017-04-10 11:38:47  [ main:759 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2017-04-10 11:38:47  [ main:768 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:struts-default namespace: parents:[]}
+2017-04-10 11:38:48  [ main:974 ] - [ DEBUG ]  Loading validator definitions.
+2017-04-10 11:38:48  [ main:1358 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 11:38:48  [ main:1380 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 11:38:48  [ main:1427 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 11:38:48  [ main:1491 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:spring-default namespace: parents:[]}
+2017-04-10 15:14:21  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:111 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 15:14:21  [ main:126 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Mon Apr 10 15:14:21 CST 2017]; root of context hierarchy
+2017-04-10 15:14:21  [ main:251 ] - [ DEBUG ]  Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Initializing new StandardEnvironment
+2017-04-10 15:14:21  [ main:291 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:306 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:306 ] - [ DEBUG ]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2017-04-10 15:14:21  [ main:306 ] - [ DEBUG ]  Resolved location pattern [classpath*:WEB-INF/applicationContext*.xml] to resources []
+2017-04-10 15:14:21  [ main:306 ] - [ DEBUG ]  Loaded 0 bean definitions from location pattern [classpath*:WEB-INF/applicationContext*.xml]
+2017-04-10 15:14:21  [ main:306 ] - [ DEBUG ]  Bean factory for Root WebApplicationContext: org.springframework.beans.factory.support.DefaultListableBeanFactory@39e69ea7: defining beans []; root of factory hierarchy
+2017-04-10 15:14:21  [ main:353 ] - [ DEBUG ]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@3e5fd2b1]
+2017-04-10 15:14:21  [ main:353 ] - [ DEBUG ]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@4b31a708]
+2017-04-10 15:14:21  [ main:353 ] - [ DEBUG ]  Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@6fbb4061]
+2017-04-10 15:14:21  [ main:353 ] - [ INFO ]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@39e69ea7: defining beans []; root of factory hierarchy
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@6c0905f6]
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Returning cached instance of singleton bean 'lifecycleProcessor'
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2017-04-10 15:14:21  [ main:369 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 352 ms
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Initializing new StandardServletEnvironment
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Adding [jndiProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Adding [systemProperties] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2017-04-10 15:14:21  [ main:369 ] - [ DEBUG ]  Initializing filter 'encodingFilter'
+2017-04-10 15:14:21  [ main:431 ] - [ DEBUG ]  Filter 'encodingFilter' configured successfully
+2017-04-10 15:14:21  [ main:509 ] - [ DEBUG ]  Loading action configurations from: struts-default.xml
+2017-04-10 15:14:21  [ main:525 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-core/2.3.1/struts2-core-2.3.1.jar!/struts-default.xml
+2017-04-10 15:14:21  [ main:696 ] - [ DEBUG ]  Loaded action configuration from: struts-default.xml
+2017-04-10 15:14:21  [ main:696 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2017-04-10 15:14:21  [ main:712 ] - [ DEBUG ]  Loaded type: name:xwork impl:com.opensymphony.xwork2.ObjectFactory
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:struts impl:org.apache.struts2.impl.StrutsObjectFactory
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:xwork impl:com.opensymphony.xwork2.DefaultActionProxyFactory
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ActionProxyFactory name:struts impl:org.apache.struts2.impl.StrutsActionProxyFactory
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:tiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:notiger impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.ObjectTypeDeterminer name:struts impl:com.opensymphony.xwork2.conversion.impl.DefaultObjectTypeDeterminer
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:struts impl:com.opensymphony.xwork2.util.WildcardHelper
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:namedVariable impl:com.opensymphony.xwork2.util.NamedVariablePatternMatcher
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.PatternMatcher name:regex impl:org.apache.struts2.util.RegexPatternMatcher
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:struts impl:org.apache.struts2.dispatcher.mapper.DefaultActionMapper
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:composite impl:org.apache.struts2.dispatcher.mapper.CompositeActionMapper
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful impl:org.apache.struts2.dispatcher.mapper.RestfulActionMapper
+2017-04-10 15:14:21  [ main:727 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.mapper.ActionMapper name:restful2 impl:org.apache.struts2.dispatcher.mapper.Restful2ActionMapper
+2017-04-10 15:14:21  [ main:743 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:struts impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 15:14:21  [ main:743 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.multipart.MultiPartRequest name:jakarta impl:org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest
+2017-04-10 15:14:21  [ main:743 ] - [ DEBUG ]  Loaded type:org.apache.struts2.views.TagLibrary name:s impl:org.apache.struts2.views.DefaultTagLibrary
+2017-04-10 15:14:21  [ main:759 ] - [ DEBUG ]  Loaded type: name:struts impl:org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 15:14:21  [ main:774 ] - [ DEBUG ]  Unable to load optional class: java.lang.NoClassDefFoundError: org/apache/velocity/context/Context
+2017-04-10 15:14:21  [ main:774 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.components.template.TemplateEngineManager
+2017-04-10 15:14:21  [ main:790 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:ftl impl:org.apache.struts2.components.template.FreemarkerTemplateEngine
+2017-04-10 15:14:21  [ main:790 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:vm impl:org.apache.struts2.components.template.VelocityTemplateEngine
+2017-04-10 15:14:21  [ main:805 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.template.TemplateEngine name:jsp impl:org.apache.struts2.components.template.JspTemplateEngine
+2017-04-10 15:14:21  [ main:805 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:struts impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 15:14:21  [ main:805 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.impl.XWorkConverter name:xwork1 impl:com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 15:14:22  [ main:821 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.conversion.impl.XWorkBasicConverter
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:xwork1 impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:struts impl:com.opensymphony.xwork2.TextProviderSupport
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:org.apache.struts2.components.UrlRenderer name:struts impl:org.apache.struts2.components.ServletUrlRenderer
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.ValueStackFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlValueStackFactory
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionProvider name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionProvider
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.util.reflection.ReflectionContextFactory name:struts impl:com.opensymphony.xwork2.ognl.OgnlReflectionContextFactory
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.TextProvider name:system impl:com.opensymphony.xwork2.DefaultTextProvider
+2017-04-10 15:14:22  [ main:837 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.conversion.NullHandler name:java.lang.Object impl:com.opensymphony.xwork2.conversion.impl.InstantiatingNullHandler
+2017-04-10 15:14:22  [ main:852 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:struts impl:com.opensymphony.xwork2.validator.AnnotationActionValidatorManager
+2017-04-10 15:14:22  [ main:868 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ActionValidatorManager name:no-annotations impl:com.opensymphony.xwork2.validator.DefaultActionValidatorManager
+2017-04-10 15:14:22  [ main:868 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFactory name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFactory
+2017-04-10 15:14:22  [ main:868 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.validator.ValidatorFileParser name:default impl:com.opensymphony.xwork2.validator.DefaultValidatorFileParser
+2017-04-10 15:14:22  [ main:868 ] - [ DEBUG ]  Loaded type: name:default impl:com.opensymphony.xwork2.ognl.OgnlUtil
+2017-04-10 15:14:22  [ main:868 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.ObjectAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Iterator impl:com.opensymphony.xwork2.ognl.accessor.XWorkIteratorPropertyAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Enumeration impl:com.opensymphony.xwork2.ognl.accessor.XWorkEnumerationAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.List impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Set impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 15:14:22  [ main:899 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Map impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.Collection impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:com.opensymphony.xwork2.ognl.ObjectProxy impl:com.opensymphony.xwork2.ognl.accessor.ObjectProxyPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:java.lang.Object impl:com.opensymphony.xwork2.ognl.accessor.XWorkMethodAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.MethodAccessor name:com.opensymphony.xwork2.util.CompoundRoot impl:com.opensymphony.xwork2.ognl.accessor.CompoundRootAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type: name:default impl:org.apache.struts2.views.jsp.ui.OgnlTool
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:org.apache.struts2.dispatcher.StaticContentLoader name:struts impl:org.apache.struts2.dispatcher.DefaultStaticContentLoader
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.UnknownHandlerManager name:struts impl:com.opensymphony.xwork2.DefaultUnknownHandlerManager
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.ArrayList impl:com.opensymphony.xwork2.ognl.accessor.XWorkListPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashSet impl:com.opensymphony.xwork2.ognl.accessor.XWorkCollectionPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded type:ognl.PropertyAccessor name:java.util.HashMap impl:com.opensymphony.xwork2.ognl.accessor.XWorkMapPropertyAccessor
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loading action configurations from: struts-plugin.xml
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Creating revision for URL: jar:file:/E:/lwj/Java/apache-maven-3.3.9/mvnRespo/org/apache/struts/struts2-spring-plugin/2.3.1/struts2-spring-plugin-2.3.1.jar!/struts-plugin.xml
+2017-04-10 15:14:22  [ main:915 ] - [ DEBUG ]  Loaded action configuration from: struts-plugin.xml
+2017-04-10 15:14:22  [ main:915 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2017-04-10 15:14:22  [ main:930 ] - [ DEBUG ]  Loaded type:com.opensymphony.xwork2.ObjectFactory name:spring impl:org.apache.struts2.spring.StrutsSpringObjectFactory
+2017-04-10 15:14:22  [ main:930 ] - [ DEBUG ]  Loading action configurations from: struts.xml
+2017-04-10 15:14:22  [ main:930 ] - [ DEBUG ]  Creating revision for URL: file:/D:/lwj/Workspaces/HospitalLogisticsManagement/target/classes/struts.xml
+2017-04-10 15:14:22  [ main:946 ] - [ DEBUG ]  Loading action configurations from: struct-action.xml
+2017-04-10 15:14:22  [ main:946 ] - [ DEBUG ]  Creating revision for URL: file:/D:/lwj/Workspaces/HospitalLogisticsManagement/target/classes/struct-action.xml
+2017-04-10 15:14:22  [ main:961 ] - [ DEBUG ]  Loaded action configuration from: struct-action.xml
+2017-04-10 15:14:22  [ main:961 ] - [ DEBUG ]  Loaded action configuration from: struts.xml
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2017-04-10 15:14:22  [ main:961 ] - [ DEBUG ]  struts.properties missing
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2017-04-10 15:14:22  [ main:961 ] - [ DEBUG ]  Choosing bean (struts) for class org.apache.struts2.views.velocity.VelocityManager to be loaded from the ObjectFactory
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2017-04-10 15:14:22  [ main:961 ] - [ INFO ]  Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2017-04-10 15:14:22  [ main:977 ] - [ DEBUG ]  Added default resource bundle 'org/apache/struts2/struts-messages' to default resource bundles = [org/apache/struts2/struts-messages, com/opensymphony/xwork2/xwork-messages]
+2017-04-10 15:14:22  [ main:1071 ] - [ INFO ]  Initializing Struts-Spring integration...
+2017-04-10 15:14:22  [ main:1071 ] - [ INFO ]  Setting autowire strategy to name
+2017-04-10 15:14:22  [ main:1071 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2017-04-10 15:14:22  [ main:1071 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:struts-default namespace: parents:[]}
+2017-04-10 15:14:22  [ main:1297 ] - [ DEBUG ]  Loading validator definitions.
+2017-04-10 15:14:22  [ main:1625 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 15:14:22  [ main:1672 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 15:14:22  [ main:1688 ] - [ DEBUG ]  new I18nInterceptor()
+2017-04-10 15:14:22  [ main:1719 ] - [ DEBUG ]  Loaded [BUILDER] {PackageConfig Name:spring-default namespace: parents:[]}

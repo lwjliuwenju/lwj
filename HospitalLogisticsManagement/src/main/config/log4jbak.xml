@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration sacn="true" scanPeriod="120" debug="false">
+<!-- <configuration> -->
+	<contextName>repair</contextName>    
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+		 	<!-- 项目开发时使用，提高开发效率 -->
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}%line - %msg %n</pattern>
+		</layout>
+	</appender>
+	
+	
+		<appender name="userLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <File>d:/campus/v3im.log</File> -->
+		<File>/mnt/sdb1/LOG/sj/Log.log</File>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>
+				<![CDATA[<redisUser datetime='%d{yy-MM-dd HH:mm:ss.SSS}' level='%p' class='%class (%M:%line\)' thread='[%thread]' >]]>%n%n   [%p] %msg%n%n<![CDATA[</redisUser>]]>%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<maxIndex>99</maxIndex>
+			<FileNamePattern>/mnt/sdb1/LOG/hospitalLog/LogHospital-%i.log</FileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>60MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	
+	<logger name="ch.qos.logback" level="INFO"/>
+	<logger name="org.springframework" level="INFO"/>
+	<logger name="net.sf.ehcache" level="INFO"/>
+	<logger name="org.apache" level="INFO"/>
+	<logger name="org.quartz" level="INFO"/>
+	<logger name="org.hibernate" level="INFO"/>
+	<logger name="freemarker" level="INFO"/>
+	<root level="ERROR">
+		<appender-ref ref="stdout"/> 
+    	<appender-ref ref="userLog" /> 
+	</root>
+</configuration>

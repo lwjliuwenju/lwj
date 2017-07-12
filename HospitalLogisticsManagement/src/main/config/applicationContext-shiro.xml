@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"  
+    default-lazy-init="true">  
+  
+    <description>Shiro安全配置</description>  
+  
+    <!-- Shiro's main business-tier object for web-enabled applications -->  
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
+        <property name="realm" ref="shiroDbRealm" />  
+        <property name="cacheManager" ref="shiroEhcacheManager" />  
+    </bean>  
+  
+    <!-- 項目自定义的Realm-->  
+    <bean id="shiroDbRealm" class="com.sj.login.shiro.ShiroDbRealm">  
+        <property name="userService" ref="userManager"/>  
+        <property name="memberService" ref="menuManager"></property>
+   		<property name="roleService" ref="roleManager"></property>
+    </bean> 
+    
+    <bean id="anyRolesAuthorizationFilter" class="com.sj.login.shiro.AnyRolesAuthorizationFilter"/>
+      
+    <!-- Shiro Filter -->  
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
+        <property name="securityManager" ref="securityManager" />  
+        <property name="loginUrl" value="/login.jsp" />  
+        <!-- <property name="successUrl" value="/" /> -->  
+        <property name="unauthorizedUrl" value="/error/noperms.jsp" />  
+        <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>
+        <property name="filters">
+        	<map>
+        		<entry key="roles" value-ref="anyRolesAuthorizationFilter"/>
+        	</map>
+        </property>
+        <!-- <property name="filterChainDefinitions">  
+            <value>  
+                anon: 表示匿名的, 即任何人都可以访问  
+            	/login_login.action = anon  
+                /login.jsp=anon  
+                /login=anon  
+                /logout=logout  
+                /Images/** = anon  
+                /system/verifyCode.action* = anon  
+                /system/userLogin_login.action* = anon  
+                /error/** = anon  
+                /Json/** = anon  
+                /Css/** = anon  
+                /Js/** = anon  
+                /admin/** = roles[admin]  
+                /** = authc  
+            </value>  
+        </property>  --> 
+        
+    </bean>  
+    <bean id="filterChainDefinitionMap" 
+    	factory-bean="filterChainDefinitionMapBuilder" 
+    	factory-method="buildFilterChainDefinitionMap">
+    </bean>
+    <bean id="filterChainDefinitionMapBuilder"
+     class="com.sj.common.filter.FilterChainDefinitionMapBuilder">
+     	<property name="adminPassDao" ref="adminPassDao"></property>
+    	<property name="menuManager" ref="menuManager"></property>	
+    </bean>  
+    
+    <!--2.配置CacheManager实例：管理Shiro相关缓存操作  -->  
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">   
+        <property name="cacheManagerConfigFile" value="classpath:ehcache-setting.xml"></property>  
+    </bean>
+      
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->  
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/> 
+    <!--6.配置使shiro注解起作用的bean，需要放在 lifecycleBeanPostProcessor后面 -->  
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"></bean>      
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
+        <property name="securityManager" ref="securityManager"></property>  
+    </bean> 
+    
+     
+</beans>

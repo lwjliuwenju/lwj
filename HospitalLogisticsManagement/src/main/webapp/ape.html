@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ape.html</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Js/themes/reset.css" />
+     <script type="text/javascript" src='../../Js/json2.js'></script>
+    <script type="text/javascript" src="../../Js/jquery.min.js"></script>
+	<style type="text/css">
+		.ButtonStyle_Blue {
+	height: 22px;
+	line-height: 22px;
+	color: #000000;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #80b5dd;
+	-o-border-image: initial;
+	border-image: initial;
+	background: url(imgages/button_bg_blue.gif) repeat-x;
+}
+
+.butList {
+	  width: 50px;
+  height:30px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-25px;
+  margin-top:-15px;
+}
+.content{
+background:#fff;
+ width: 510px;
+  height:260px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-265px;
+  margin-top:-130px;
+  border: 1px solid #ccc;
+  padding: 15px 10px;
+  padding-right:100px;
+  text-align:center;
+}
+.userinfo-desc {
+  font-size: 16px;
+  display:inline-block;
+  width: 200px;
+  margin-bottom:6px;
+  text-align: right;;
+}
+.input {
+  width: 154px;
+  padding: 0px 10px;
+  height: 26px;
+  line-height: 30px;
+  border:1px solid #ccc;
+}
+	</style>
+  </head>
+  
+  <body style="background:#4169E1;">
+    	<div class="content">
+    		<div><label class="userinfo-desc">原密码:</label><input type="text" id="oldPassword" class="input"></div>
+    		<div><label class="userinfo-desc">新密码:</label><input type="text"  id="newPassword" class="input"></div>
+    		<div><label class="userinfo-desc">重复密码:</label><input type="text"  id="rePassword" class="input"></div>
+    		<div class="butList" style="margin: 20px auto;width:300px">
+				<input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save"> 
+			</div>
+    	</div>
+    	<script>
+    		$(function(){
+    		 	var host = window.location.host;
+				var windowPath = "http://"+host + "/";
+    			$('#save').click(function(){
+    			var oldPassword = $('#oldPassword').val();
+    			var newPassword = $('#newPassword').val();
+    			var rePassword = $('#rePassword').val();
+    				if($.trim(newPassword) == $.trim(rePassword)&&$.trim(newPassword)!=""){
+    					$.post(windowPath+'user_ape.action',{oldPassword:oldPassword,password:newPassword},function(data){
+    						 var code = JSON.parse(data).code_;
+            				if (code == '0') {
+                			alert("修改成功");
+               			 }else{
+               			 		alert("修改失败!");
+               			 	}
+    					})
+    				}else{
+    				alert('两次输入的密码不一致!');
+    				return;
+    				}
+    			})
+    		});
+    	</script>
+  </body>
+</html>

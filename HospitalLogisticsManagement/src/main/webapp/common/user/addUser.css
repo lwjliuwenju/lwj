@@ -1,0 +1,98 @@
+.confirm {
+    background-color: rgb(238, 249, 255);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: 1px solid #34679b;
+    width: 830px;
+    margin-left: -415px;
+    margin-top: -260px;
+   
+     
+        }
+         .confirmTitle {
+        background: #34679b;
+        height: 27px;
+        color: #FFF;
+        font-weight: bold;
+        }
+           .title {
+            float: left;
+            padding-left: 10px;
+            background: #34679b;
+            color: #FFF;
+            font-weight: bold;}
+        .closeWindow {
+            float: right;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+    }
+    .PopUpTableBorder {
+        border-collapse: collapse;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(164, 213, 230);
+        border-image: initial;
+        background-color: rgb(238, 249, 255);
+        margin: 5px auto;
+        
+        }
+        .PopUpTableTitle {
+            background-color: rgb(238, 249, 255);
+            text-align: right;}
+        td {
+            border-collapse: collapse;
+            line-height: 30px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(164, 213, 230);
+            border-image: initial;
+        }
+        .role,
+        .username {
+            line-height: 20px;
+            height: 20px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(98, 159, 207);
+            border-image: initial;
+            margin: 4px;
+        }
+        .tishi {
+            padding-left: 25px;
+            font-size: 12px;
+            line-height: 22px;
+            vertical-align: middle;
+            background: url(../images/onShow.gif) no-repeat rgb(255, 242, 233);
+        }
+        .onfocus {
+            background: url(../images/onBlue.png) no-repeat rgb(255, 242, 233);
+        }
+        .onerror {
+            background: url(../images/onError.gif) no-repeat rgb(255, 242, 233);
+        }
+        .onCurrect {
+            background: url(../images/onCorrect.gif) no-repeat rgb(255, 242, 233);
+        }
+    }
+    .ButtonStyle_Blue {
+        height: 22px;
+        line-height: 22px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(128, 181, 221);
+        border-image: initial;
+        background: url(../../images/button_bg_blue.gif) repeat-x;
+    }
+    .butList {
+        margin: 10px auto;
+        width: 300px;
+    }
+}
