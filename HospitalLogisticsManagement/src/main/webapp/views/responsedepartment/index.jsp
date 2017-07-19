@@ -87,7 +87,7 @@
 		<div id='responsedepartmentlist'></div>
 	</div>
 	<div id="dd" class="easyui-dialog" title="派遣人员" closed="true"
-		style="min-width:300px;min-height:300px;width:600px;height:400px">
+		style="min-width:300px;min-height:300px;width:600px;height:400px;display:none;">
 		<div id="dgdiv">
 			<table class="easyui-datagrid" id="dg"></table>
 		</div>
