@@ -19,70 +19,7 @@
 <script type="text/javascript" src="../../Js/vilidate.js"></script>
 <script type="text/javascript" src="../../Js/pinyin.js"></script>
 <script type="text/javascript" src="../../common/projectform/index.js"></script>
-<style type="text/css">
-.PopUpTableBorder {
-	border-collapse: collapse;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #a4d5e6;
-	-o-border-image: initial;
-	border-image: initial;
-	background-color: #eef9ff;
-	margin: 5px auto;
-}
-
-.PopUpTableBorder .PopUpTableTitle {
-	background-color: #eef9ff;
-	text-align: right;
-}
-
-.PopUpTableBorder td {
-	border-collapse: collapse;
-	line-height: 30px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #a4d5e6;
-	-o-border-image: initial;
-	border-image: initial;
-}
-
-.PopUpTableBorder .role, .confirm .PopUpTableBorder .username {
-	line-height: 20px;
-	height: 20px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #629fcf;
-	-o-border-image: initial;
-	border-image: initial;
-	margin: 4px;
-}
-
-.PopUpTableBorder .tishi {
-	padding-left: 25px;
-	font-size: 12px;
-	line-height: 22px;
-	vertical-align: middle;
-	background: url(../imgages/onShow.gif) no-repeat #fff2e9;
-}
-
-.ButtonStyle_Blue {
-	height: 22px;
-	line-height: 22px;
-	color: #000000;
-	cursor: pointer;
-	vertical-align: middle;
-	margin-right: 4px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #80b5dd;
-	-o-border-image: initial;
-	border-image: initial;
-	background: url(../imgages/button_bg_blue.gif) repeat-x;
-	border-radius: 5px;
-}
-</style>
+ <link rel="stylesheet" type="text/css" href="../../css/serviceform.css">
 </head>
 
 <body>
@@ -93,7 +30,7 @@
 			</div>
 			<div>
 				<a id="addProject" href="javascript:void(0)"iconCls="icon-add"
-					class="easyui-linkbutton">添加服务</a>
+					class="easyui-linkbutton">添加一级服务</a>
 					 <a id="editProject" href="javascript:void(0)" iconCls="icon-edit" class="easyui-linkbutton">修改服务</a> <a
 					id="delProject" href="javascript:void(0)" iconCls="icon-remove"class="easyui-linkbutton">删除服务</a>
 			</div>
@@ -103,10 +40,11 @@
 		</div>
 		<div id="menu1" class="easyui-menu" style="width:120px;">
 		<div onclick="reg()" data-options="iconCls:'icon-add'">登记</div>
+		<div onclick="add()" data-options="iconCls:'icon-add'">添加下级服务</div>
 		</div>
 		<div id="addProjectDialog" class="easyui-dialog" title="添加服务"
 			data-options="iconCls:'icon-save'" closed="true"
-			style="width:500px;height:300px;padding:10px;">
+			style="width:500px;height:380px;padding:10px;">
 			<table class="PopUpTableBorder" border="0" cellspacing="0"
 				cellpadding="0">
 				<tbody>
@@ -130,6 +68,13 @@
 						<input type="text" name="" id="depname"
 							value="" placeholder="" style="width: 96%;"></td>
 					</tr>
+				<!-- 	<tr>
+						<td class="PopUpTableTitle" width="100px"><font
+							color="#ff0000">*</font> 所属服务:</td>
+						<td width="390px">
+						<input type="text" name="" id="service"
+							value="" placeholder="" style="width: 96%;"></td>
+					</tr> -->
 					<tr>
                     <td class="PopUpTableTitle" width="150px">
                         <font color="#ff0000">*</font>
@@ -163,6 +108,13 @@
 						<td class="PopUpTableTitle" width="100px"><font
 							color="#ff0000">*</font> 服务名:</td>
 						<td width="390px"><input type="text" name="" id="projectName"
+							value="" placeholder="" style="width: 96%;"></td>
+					</tr>
+						<tr>
+						<td class="PopUpTableTitle" width="100px"><font
+							color="#ff0000">*</font> 所属服务:</td>
+						<td width="390px">
+						<input type="text" name="" id="Service"
 							value="" placeholder="" style="width: 96%;"></td>
 					</tr>
 					<tr>

@@ -1899,7 +1899,7 @@ else {
 
 /**
  * util-request.js - The utilities for requesting script and style files
- * ref: tests/research/load-js-css/test.html
+ * ref: tests/research/load-js-css/test2.html
  */
 if (isWebWorker) {
   function requestFromWebWorker(url, callback, charset) {
@@ -2017,7 +2017,7 @@ function getCurrentScript() {
 
 /**
  * util-deps.js - The parser for dependencies
- * ref: tests/research/parse-dependencies/test.html
+ * ref: tests/research/parse-dependencies/test2.html
  * ref: https://github.com/seajs/searequire
  */
 

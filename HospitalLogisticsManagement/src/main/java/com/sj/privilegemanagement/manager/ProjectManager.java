@@ -31,4 +31,11 @@ public interface ProjectManager extends BaseManager<ProjectEntity> {
 	 * @return
 	 */
 	List<ProjectEntity> findbyproName(String projectName);
+	/**
+	 * 根据fatherid和depid获取所有的一级菜单
+	 * @param depId
+	 * @param fatherid
+	 * @return
+	 */
+	List<Map<String, Object>> findbyfatherId(long depId, String fatherid);
 }

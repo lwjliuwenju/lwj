@@ -46,7 +46,18 @@ public class ProjectEntity extends BaseEntity{
 	 */
 	@Column(name = "GRADE_")
 	private Integer grade;
+	/**
+	 * 父ID
+	 */
+	@Column(name ="FATHER_ID_")
+	private String fatherId;
 	
+	public String getFatherId() {
+		return fatherId;
+	}
+	public void setFatherId(String fatherId) {
+		this.fatherId = fatherId;
+	}
 	public int getGrade() {
 		return grade;
 	}

@@ -137,6 +137,11 @@ public class Proposer extends BaseEntity{
 	@Column(name ="GOODSTEAM_ID_")
 	private Long goodsteamId;
 	/**
+	 * 物流对名称
+	 */
+	@Column(name = "GOODSTEAM_NAME_")
+	private String goodsteamName;
+	/**
 	 * 挂起标记
 	 * 1:挂起  0：默认
 	 */
@@ -216,9 +221,19 @@ public class Proposer extends BaseEntity{
 	/**
 	 * 终止人姓名
 	 */
-	@Column(name ="TERMINATION_REASON_USER_NAME_")
+	@Column(name = "TERMINATION_REASON_USER_NAME_")
 	private String terminationReasonUserName;
-	
+	/**
+	 * 响应人员列表
+	 */
+	@Column(name = "RESPONSE_STAFF_LIST_")
+	private String responseStaffList;
+	public String getResponseStaffList() {
+		return responseStaffList;
+	}
+	public void setResponseStaffList(String responseStaffList) {
+		this.responseStaffList = responseStaffList;
+	}
 	public int getCheckflag() {
 		return checkflag;
 	}
@@ -371,5 +386,11 @@ public class Proposer extends BaseEntity{
 	}
 	public void setTerminationReasonUserName(String terminationReasonUserName) {
 		this.terminationReasonUserName = terminationReasonUserName;
+	}
+	public String getGoodsteamName() {
+		return goodsteamName;
+	}
+	public void setGoodsteamName(String goodsteamName) {
+		this.goodsteamName = goodsteamName;
 	}
 }

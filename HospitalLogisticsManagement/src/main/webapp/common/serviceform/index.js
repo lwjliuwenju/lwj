@@ -57,18 +57,7 @@ $(function() {
                     field: 'appraise',
                     title: '评价',
                     width: 100,
-                    align: 'center',
-                    formatter: function(value) {
-                        if (value == 1) {
-                            return '<span style="color:green">优</span>'; }
-                        if (value == 2) {
-                            return '<span style="color:red">良</span>'; }
-                        if (value == 3) {
-                            return '<span style="color:blue">中</span>'; }
-                        if (value == 4) {
-                            return '<span style="color:white">差</span>'; } else {
-                            return "未评价"; }
-                    }
+                    align: 'center'
                 }, {
                     field: 'endTime',
                     title: '完成时间',
@@ -238,53 +227,7 @@ $(function() {
             }
         });
     });
-    $("#evaluate").click(function() {
-        var row = $("#serviceFormlist").datagrid('getSelected');
-        if (row.status != 4) {
-             $.messager.alert('系统提示', '申请单只有完成后，才能评价。', 'warning');
-            return;
-        }
-        if (row.appraise == 1) {
-        	$.messager.alert('系统提示', '该申请单已经被评价，不能重复评价', 'warning');
-            
-        } else {
-            $('#evaluateform').window('open').window('center');
-            
-            var row = $("#serviceFormlist").datagrid('getSelected');
-            var proposerName = $("#proposerName").val(row.depName);
-            var e =row.endTime;
-            var s;
-            var startTime = row.responseTime;
-            if(startTime != null)
-            	s = startTime;
-            else
-            	s = e;
-            $("#endtime").val(e);
-            $("#xiangyingtime").val(s);
-            $("#proposerDepName").val(row.depName);
-        }
-    });
-        $("#save").click(function() {
-            var url2 = windowPath+'proposer_evaluate.action';
-            var row = $("#serviceFormlist").datagrid('getSelected');
-            var appraise = $('.mt:radio:checked').attr('data-option');
-	        var appraiseMark = $('#mark1').val();
-	        var proposerId = row.id;
-            $.post(url2, {'appraise':appraise,'appraiseMark':appraiseMark,'proposerId':proposerId},
-                function(data) {
-                    var code = JSON.parse(data).code_;
-                    if (code == '0') {
-                    	$.messager.alert('系统提示', '评价成功', 'info',function(){
-                    		   location.reload();
-                    	});
-                    } else {
-                    	$.messager.alert('系统提示', '评价失败', 'error');
-                    }
-                });
-        });
-        $("#close").click(function(){
-           	$('#evaluateform').dialog('close');
-        });
+       
  
     $("#searchServiceform").click(function() {
     	var startTime = $("#startTime").datebox('getValue');
@@ -329,7 +272,47 @@ $(function() {
         });
     });
     $("#insertServiceform").click(function() {
-    	$('#addServiceform').window('open').window('center');
+    	  $('body').append('<div id="addServiceform"></div>');
+          $('#addServiceform').dialog({
+              title: '添加申请单',
+              width: 600,
+              height: 400,
+              closed: false,
+              cache: false,
+              href: windowPath + 'proposer_addServiceform.action',
+              modal: true,
+              onClose: function() {
+                  $('#addServiceform').remove();
+              }
+          });
+    });
+    $("#evaluate").click(function() {
+    	 var row = $("#serviceFormlist").datagrid('getSelected');
+    	 if(row == null){
+    		 $.messager.alert('系统提示', '请选择你要评价的申请单!!', 'warning');
+    		 return;
+    	 }
+         if (row.status != 4) {
+        	 $.messager.alert('系统提示', '申请单只有完成后，才能评价。', 'warning');
+        	 return;
+         }
+         if (row.appraise == 1) {
+         	$.messager.alert('系统提示', '该申请单已经被评价，不能重复评价', 'warning');
+         	return;
+         } 
+    	$('body').append('<div id="evaluateform"></div>');
+    	$('#evaluateform').dialog({
+    		title: '评价申请单',
+    		width: 600,
+    		height: 400,
+    		closed: false,
+    		cache: false,
+    		href: windowPath + 'proposer_evaluateform.action',
+    		modal: true,
+    		onClose: function() {
+    			$('#evaluateform').remove();
+    		}
+    	});
     });
     $.post(windowPath+'dep_getdepartment.action',function(dataT){
     	var data = JSON.parse(dataT);
@@ -338,34 +321,18 @@ $(function() {
         	data: data, 
             valueField: 'id',
             textField: 'text',
-            filter: filterCombo
+            filter: filterCombo,
+            onSelect: function(data) {
+                var url2= windowPath+'project_findById.action?id='+data.id+'&fatherid=0';
+            	$('#service').combobox('reload',url2);
+            }
         });
+    	 $('#aaa').combobox({
+    	    	valueField: 'id',
+    			textField: 'text',
+    	    });
     });
     
-    $("#save_add").click(function() {
-        var mark = $("#mark").val();
-        var responseDeptid = $("#responseDeptName").combobox('getValue');
-        var sendDeptId = $("#shenqingdepartment2").combobox('getValue');
-        var url2 = windowPath+'proposer_saveProposer.action';
-        $.post(url2, {
-                mark: mark,
-                responseDeptid: responseDeptid,
-                sendDeptId: sendDeptId
-            },
-            function(data) {
-                var code = JSON.parse(data).code_;
-                if (code == '0') {
-                	 $.messager.alert('系统提示', '添加成功', 'info',function(){
-                		 location.reload();
-                	 });
-                } else {
-                	 $.messager.alert('系统提示', '添加失败', 'error');
-                }
-            });
-    });
-    $('#close_add').click(function(){
-    	$('#addServiceform').dialog('close');
-    });
     
     /**
      * 选择耗材管理
@@ -382,80 +349,20 @@ $(function() {
         	$.messager.alert('系统提示', '只有未完成状态下，才能添加耗材！', 'warning');
         	return;
         }
+        $('body').append('<div id="suppliesDialog"></div>');
+    	$('#suppliesDialog').dialog({
+    		title: '耗材',
+    		width: 600,
+    		height: 400,
+    		closed: false,
+    		cache: false,
+    		href: windowPath + 'proposer_addHaocai.action',
+    		modal: true,
+    		onClose: function() {
+    			$('#suppliesDialog').remove();
+    		}
+    	});
     })
-    $('#close-s').click(function() {
-        $('#suppliesDialog').dialog('close');
-    });
-    $('#suppliesDatagrid').datagrid({
-        iconCls: 'icon-wrench',
-        checkbox: true,
-        width: 'auto',
-        height: 'auto',
-        fitColumns: true,
-        rownumbers: true,
-        animate: true,
-        collapsible: false,
-        collapsed: false,
-        striped: true, //隔行变色
-        singleSelect: false,
-        autoSave: true,
-        pageNum: 1, //每次重新查询设置为第一页，这里重要，测试一下
-        pageSize: 15,
-        pageList: [15, 30, 50], //可以设置每页记录条数的列表 
-        pagination: true, // 分页控件
-        url: windowPath + 'supplies_findAll.action?depid='+id,
-        columns: [
-            [
-                { field: 'ck', checkbox: true },
-                { field: 'id', title: '耗材ID', width: 60, hidden: true },
-                { field: 'name', title: '耗材名称', width: 100, align: 'center' }, {
-                    field: 'suppliesNum',
-                    title: '耗材数量',
-                    width: 100,
-                    align: 'center',
-                    editor: {
-                        type: 'numberbox',
-                        options: {
-                            required: true //校验必须
-                        }
-                    }
-
-                }
-            ]
-        ],
-
-        onClickRow: onClickRow,
-        onAfterEdit: function(rowIndex, rowData, changes) {
-            //保存编辑行数据
-            var a = rowData.suppliesNum;
-            var id = rowData.id;
-            $('#suppliesDatagrid').datagrid('updateRow', {
-                index: rowIndex,
-                row: {
-                    'id': id,
-                    suppliesNum: a
-                }
-            });
-        }
-    });
-    $('#supDep').combobox({
-    	data:deps,
-    	valueField: 'id',
-        textField: 'text',
-        width:140,
-        filter: filterCombo,
-        onLoadSuccess:function(){
-        	 var data = $(this).combobox('getData');
-             if (data.length > 0) {
-                 $(this).combobox('select', data[0].text);
-             } 
-        },
-        onSelect:function(data){
-        	id = data.id;
-   	     $('#suppliesDatagrid').datagrid('options').url = windowPath+'supplies_findAll.action?depid='+id + "&supId="+ supId;
-   	    	$('#suppliesDatagrid').datagrid('reload');
-   	    }
-    });
     $('#supName').combobox({
     	url:windowPath+'supplies_findSup.action',
     	valueField: 'id',
@@ -474,73 +381,6 @@ $(function() {
    	    	$('#suppliesDatagrid').datagrid('reload');
    	    }
     });
-    //记录当前处于编辑状态行索引
-    var editIndex = undefined;
-
-    function endEditing() {
-        //没有编辑
-        if (editIndex == undefined) {
-            return true
-        }
-        //数据校验
-        if ($('#suppliesDatagrid').datagrid('validateRow', editIndex)) {
-            //校验通过技术编辑
-            $('#suppliesDatagrid').datagrid('endEdit', editIndex);
-            editIndex = undefined;
-            return true;
-        } else {
-            //校验没有通过继续编辑
-            return false;
-        }
-    }
-    //行点击事件
-    function onClickRow(index) {
-        //记录的编辑行， 和当前点击行 不能同一样
-        if (editIndex != index) {
-            //结束之前的编辑
-            if (endEditing()) {
-                //让当前点击行进行编辑
-                $('#suppliesDatagrid').datagrid('selectRow', index)
-                    .datagrid('beginEdit', index);
-                //记录编辑行
-                editIndex = index;
-            } else {
-                //选中当前行
-                $('#suppliesDatagrid').datagrid('selectRow', editIndex);
-            }
-        }
-    };
-    
-    //保存耗材
-    $('#save-s').click(function() {
-        endEditing();
-
-        var row = $("#serviceFormlist").datagrid('getSelected');
-        //申请单ID
-        var proposerId = row.id;
-        
-        //耗材ID
-        var supplies = [];
-        //耗材数量
-        var rows = $('#suppliesDatagrid').datagrid('getSelections');
-        for (var i = 0; i < rows.length; i++) {
-            supplies.push(rows[i].id + ":" + rows[i].suppliesNum);
-            if (rows[i].suppliesNum == null) {
-                $.messager.alert('系统提示', '请选择耗材数量', 'warning');
-                return;
-            }
-        }
-        $.post(windowPath + 'suppliesproposer_saveSupplies.action', { proposerId: proposerId, supplies: supplies }, function(data) {
-            var code = JSON.parse(data).code_;
-            if (code == '0') {
-            	$.messager.alert('系统提示', '选择耗材成功', 'info',function(){
-            		 location.reload();
-            	});
-            } else {
-               $.messager.alert('系统提示', '选择耗材失败，请重试!', 'error');
-            }
-        });
-    });
     /*物流通知*/
     $('#logisticscall').click(function(){
     	var row = $('#serviceFormlist').datagrid('getSelected');    	
@@ -549,97 +389,25 @@ $(function() {
     		return;
     	}
     	if(row.status < 4){
-    		$('#callLogistics').window('open').window('center');
+    		  $('body').append('<div id="callLogistics"></div>');
+    	    	$('#callLogistics').dialog({
+    	    		title: '耗材',
+    	    		width: 600,
+    	    		height: 400,
+    	    		closed: false,
+    	    		cache: false,
+    	    		href: windowPath + 'proposer_logistics.action',
+    	    		modal: true,
+    	    		onClose: function() {
+    	    			$('#callLogistics').remove();
+    	    		}
+    	    	});
     	}else{
     		$.messager.alert('系统提示', '该申请单无法完成该操作，请联系管理员!', 'warning');
     		return;
     	}
     });
-    $('#close-call').click(function(){
-    	$('#callLogistics').dialog('close');
-    });
-    $('#wuliuteam').combobox({
-    	 url:windowPath+'dep_findByTransport.action' ,
-         valueField: 'id',
-         textField: 'text',
-         filter: filterCombo,
-         onLoadSuccess:function(){
-         	 var data = $(this).combobox('getData');
-              if (data.length > 0) {
-                  $(this).combobox('select', data[0].text);
-              } 
-         }
-    });
-    $('#save-call').click(function(){
-    	var depid = $('#wuliuteam').combobox('getValue');
-    	var proId = $('#serviceFormlist').datagrid('getSelected').id;
-    	var goodsName = $('#wupinName').val();
-    	var url = windowPath + 'proposer_sendmessager.action';
-    	$.post(url,{depid:depid,goodsName:goodsName,proId:proId},function(data){
-    		 var code = JSON.parse(data).code_;
-             if (code == '0') {
-             	$.messager.alert('系统提示', '物流请求信息已发出!', 'info');
-                 location.reload();
-             } else {
-                $.messager.alert('系统提示', '物流请求信息发送失败，请重试!', 'error');
-             }
-    	});
-    });
-    function addtr() {
-        var str = '<tr class="lst">' + '<td align="center">' +
-            '<input type="text" style="width: 90%;" class="bloodUser">' +
-            '</td>' + '<td align="center">' +
-            '<input type="text"  style="width: 90%;" class="bloodPos">' +
-            '</td>' + '<td align="center">' +
-            '<input type="datetime"  style="width: 90%;" class="bloodDate">' +
-            '</td>' + '<td align="center">' +
-            '<input type="text"  style="width: 90%;" class="bloodDep">' +
-            '</td>' + '<td align="center">' +
-            '<input type="number"  style="width: 90%;" min="1" class="bloodNum">' +
-            '</td>' + '<td align="center">' +
-            '<input type="button" value="删除" class="ButtonStyle_Blue del">' +
-            '</td>' + '</tr>';
-    $('#pick').before(str);
-    var lastBloodDate = $('#tb').find('.bloodDate:last');
-    var lastBloodDep = $('#tb').find('.bloodDep:last');
-    /*$('.bloodDate').datetimebox();*/
-    lastBloodDate.datetimebox();
-    lastBloodDep.combobox({
-   	 data: deps,
-     valueField: 'id',
-     textField: 'text',
-     filter: filterCombo,
-     onLoadSuccess:function(){
-    	 var data = $(this).combobox('getData');
-         if (data.length > 0) {
-             $(this).combobox('select', data[0].text);
-         } 
-    }
-	});
-	};
-	var flag =  0;
-	if(flag == 0){
-		$('.bloodDep').combobox({
-		   url: windowPath + 'dep_getdepartment.action',
-	       valueField: 'id',
-	       textField: 'text',
-	       width:150,
-           filter: filterCombo,
-           onLoadSuccess:function(){
-          	 var data = $(this).combobox('getData');
-               if (data.length > 0) {
-                   $(this).combobox('select', data[0].text);
-               } 
-          }
-		});
-		flag = 1;
-	};
-    $('#add').click(function() {
-        addtr();
-    });
-    $('#tb').on('click', '.del', function() {
-        $(this).parent().parent().remove();
-    });
+   
     /*物流信息填写*/
     $('#logisticsinfo').click(function(){
     	var row = $('#serviceFormlist').datagrid('getSelected');
@@ -647,8 +415,20 @@ $(function() {
     		$.messager.alert('系统提示', '请选择你要操作的申请单!', 'warning');
     		return;
     	}
-    	if(row.status < 4){
-    		$('#infoLogistics').window('open').window('center');
+    	if(row.status < 4 && row.pickdepName != ''){
+    		 $('body').append('<div id="infoLogistics"></div>');
+    	    	$('#infoLogistics').dialog({
+    	    		title: '物流信息填写',
+    	    		width: 600,
+    	    		height: 450,
+    	    		closed: false,
+    	    		cache: false,
+    	    		href: windowPath + 'proposer_logisticsWrite.action',
+    	    		modal: true,
+    	    		onClose: function() {
+    	    			$('#infoLogistics').remove();
+    	    		}
+    	    	});
     	}else{
     		$.messager.alert('系统提示', '该申请单不能进行该操作，具体请联系管理员!', 'warning');
     		return;
@@ -657,39 +437,6 @@ $(function() {
     	$("#pickUser").val(row.pickUser);
     	}
     });
-    $('#close-info').click(function(){
-    	$('#infoLogistics').dialog('close');
-    });
-    $('#save-info').click(function() {
-        var arr = [];
-        var allList = $('.lst');
-        for (var i = 0; i < allList.length; i++) {
-            var blood = {};
-            blood.bloodUser = $($('.bloodUser')[i]).val();
-            blood.bloodPos = $($('.bloodPos')[i]).val();
-            blood.bloodDate = $($('.bloodDate')[i]).datetimebox('getValue');
-            blood.bloodDep = $($('.bloodDep')[i]).val();
-            blood.bloodNum = $($('.bloodNum')[i]).val();
-            arr.push(blood);
-        }
-        var object = {};
-        object.proid = $('#serviceFormlist').datagrid('getSelected').id;
-        object.pickUser = $('#pickUser').val();
-        object.pickPhone = $('#pickPhone').val();
-        object.arr = arr;
-        var url = windowPath + 'proposer_saveLogistics.action';
-        $.post(url,{object:JSON.stringify(object)},function(data){
-        	var code = JSON.parse(data).code_;
-            if (code == '0') {
-            	$.messager.alert('系统提示', '物流信息已提交!', 'info',function(){
-            		  location.reload();
-            	});
-              
-            } else {
-               $.messager.alert('系统提示', '物流信息提交失败，请重试!', 'error');
-            }
-        })
-    });
     });
 function add() {
 	var host = window.location.host;
@@ -697,55 +444,20 @@ function add() {
 	var row = $("#serviceFormlist").datagrid('getSelected');
 	if (row == null) {
 		$.messager.alert('系统提示', '请选择你要选择服务的申请单', 'warning');
+		return;
 	}
-	var proId = row.id;
-	$('#selectProject').window('open').window('center');
-	$('#responsedepname').combobox({
-		url: windowPath+'dep_getdepartment.action', 
-		valueField: 'id',
-		textField: 'text',
-		editable:true,
-		onSelect: function(data){
-			var url= windowPath+'project_findById.action?id='+data.id;
-			$('#responseDeptitem').combobox('reload',url);
-		} 
-	});
-	$('#responseDeptitem').combobox({
-		//url:'combobox_data.json',
-		valueField: 'id',
-		textField: 'text',
-		onSelect: function (data) {
-			var itemid =data.id;
-			if(itemid!=""){
-				$("#responsenewDeptitem").attr("disabled","disabled");
-			}				
+	$('body').append('<div id="selectProject"></div>');
+	$('#selectProject').dialog({
+		title: '选择服务',
+		width: 500,
+		height: 400,
+		closed: false,
+		cache: false,
+		href: windowPath + 'proposer_addService.action',
+		modal: true,
+		onClose: function() {
+			$('#selectProject').remove();
 		}
-	});
-	$('#save_pro').click(function(){
-		var proId =$("#serviceFormlist").datagrid("getSelected").id;
-		var responseDeptid = $("#responsedepname").combobox('getValue');
-		var responseDeptitem = $("#responseDeptitem").combobox('getText');
-		var ProposerId = $("#responseDeptitem").combobox('getValue');
-		var url2 = windowPath+'proposer_saveproject.action';
-		$.post(url2, {
-			responseDeptitem: responseDeptitem,
-			ProposerId:ProposerId,
-			responseDeptid:responseDeptid,
-			proId:proId
-		},
-		function(data) {
-			var code = JSON.parse(data).code_;
-			if (code == '0') {
-				$.messager.alert('系统提示', '选择服务成功!', 'info',function(){
-					location.reload();
-				});
-			} else {
-				$.messager.alert('系统提示','选择服务失败,请重试!','error');
-			}
-		});
-	});
-	$('#close_pro').click(function(){
-		$('#selectProject').window('open').window('center');
 	});
 };
 function edit() {
@@ -754,55 +466,19 @@ function edit() {
 	var row = $("#serviceFormlist").datagrid('getSelected');
 	if (row == null) {
 		$.messager.alert('系统提示', '请选择你要选择服务的申请单', 'warning');
+		return;
 	}
-	var proId = row.id;
-	$('#edit1Project').window('open').window('center');
-	$('#repdepname').combobox({
-		url: windowPath+'dep_getdepartment.action', 
-		valueField: 'id',
-		textField: 'text',
-		editable:true,
-		onSelect: function(data){
-			var url= windowPath+'project_findById.action?id='+data.id;
-			$('#responsedeptitem').combobox('reload',url);
-		} 
-	});
-	$('#responsedeptitem').combobox({
-		//url:'combobox_data.json',
-		valueField: 'id',
-		textField: 'text',
-		onSelect: function (data) {
-			var itemid =data.id;
+	$('body').append('<div id="edit1Project"></div>');
+	$('#edit1Project').dialog({
+		title: '修改服务',
+		width: 500,
+		height: 400,
+		closed: false,
+		cache: false,
+		href: windowPath + 'proposer_editService.action',
+		modal: true,
+		onClose: function() {
+			$('#edit1Project').remove();
 		}
-	});
-	$("#repdepname").combobox('setValue',row.reponseDepId);
-	$("#repdepname").combobox('setText',row.responseDepName);
-	$("#responsedeptitem").combobox('setValue',row.projectId);
-	$("#responsedeptitem").combobox('setText',row.projectName);
-	$("#save_edit").click(function() {
-		var proId =$("#serviceFormlist").datagrid("getSelected").id;
-		var responseDeptid = $("#repdepname").combobox('getValue');
-		var responseDeptitem = $("#responsedeptitem").combobox('getText');
-		var ProposerId = $("#responsedeptitem").combobox('getValue');
-		var url2 = windowPath+'proposer_saveproject.action';
-		$.post(url2, {
-			responseDeptitem: responseDeptitem,
-			ProposerId:ProposerId,
-			responseDeptid:responseDeptid,
-			proId:proId
-		},
-		function(data) {
-			var code = JSON.parse(data).code_;
-			if (code == '0') {
-				$.messager.alert('系统提示', '修改服务成功!', 'info',function(){
-					location.reload();
-				});
-			} else {
-				$.messager.alert('系统提示', '修改服务失败!', 'info');
-			}
-		});
-	});
-	$('#close_edit').click(function(){
-		$('#edit1Project').dialog('close');
 	});
 };

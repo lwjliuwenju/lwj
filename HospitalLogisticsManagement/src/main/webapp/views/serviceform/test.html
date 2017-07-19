@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" charset="utf-8" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/serviceform.css">
+  </head>
+  <body>
+  	<div class="content-table">
+  		<div class="content-table-title">申请单管理</div>
+  		<!-- 分割线 -->
+  		<div align="left" id="serviceFormTools">
+                <div style="margin:2px 0px;"> 申&nbsp;&nbsp;&nbsp;&nbsp;请&nbsp;&nbsp;&nbsp;&nbsp;人:
+                    <select id="submitperson" style="width:200px;margin:0px;">
+                    		<option value="0">请选择</option>
+                    </select>
+                    状&nbsp;&nbsp;&nbsp;&nbsp;态：
+                    <SELECT id='state' class="easyui-combobox" style="width:200px;margin:0px;">
+                        <option value="0">请选择</option>
+                        <option value="1">异常</option>
+                        <option value="2">待响应</option>
+                        <option value="3">响应中</option>
+                        <option value="4">已完成</option>
+                        <option value="5">已终止</option>
+                        <option value="6">已评价</option>
+                    </SELECT>
+                    排序方式：
+                    <SELECT id='shunxu' class="easyui-combobox" style="width:200px;margin:0px;">
+                        <option value="0">请选择</option>
+                        <option value="1">状态</option>
+                        <option value="2">时间</option>
+                    </SELECT>
+                </div>
+                <div style="margin:2px 0px;">
+                    申&nbsp请&nbsp部&nbsp门：
+                    <input id="shenqingdepartment" style="width:200px;margin:0px;"></input>
+                    响应部门：
+                    <input id="jieshoubumen" style="width:200px;margin:0px;"></input>
+                    响应人员：
+                    <input id="zhixingperson" style="width:200px;margin:0px;"></input>
+                </div>
+                <div style="margin:2px 0px;">
+                    开&nbsp始&nbsp时&nbsp间:
+                    <input id="startTime" name="startTime" class="easyui-datebox" style="width:200px;margin:0px;"></input>
+                    &nbsp结束时间:
+                    <input id="endTime" name="endTime" class="easyui-datebox" style="width:200px;margin:0px;"></input>
+                </div>
+  		
+  		
+  		<!--分割线  -->
+  		<ul class="buttonList clear">
+        	<li>
+        		<input type="button" class="search button" name="" value="查询" >
+        	</li>
+        	<li>
+        		<input type="button" class="add button" name="" value="添加申请单" id="add">
+        	</li>
+        	<li>
+        		<input type="button" class="seeDetail button" id="seeDetail" name="" value="查看详情" >
+        	</li>
+        	<li>
+        		<input type="button" class="evealute button" name="" value="评价" disabled="disabled">
+        	</li>
+        	<li>
+        		<input type="button" name="" class="supplies button" value="耗材" disabled="disabled">
+        	</li>
+        	<li>
+        		<input type="button" name="" class="end button" value="完成" >
+        	</li>
+        	<li>
+        		<input type="button" name="" class="call button" value="物流通知"  id="call">
+        	</li>
+        	<li>
+        		<input type="button" name="" class="write button" value="物流填写" >
+        	</li>
+        </ul>
+	    <table cellspacing="1" id="data-table" class="data-table" data-url="proposer_findAll.action">
+	    <thead>
+	    	<tr>
+	    		<th id="qx"><input type="checkbox" /></th>
+	    		<!-- <th data-col="id" data-hidden="true" style="display:none;">id</th> -->
+	    		<th data-col="depName" >科室名称</th>
+	    		<th data-col="proposerTime">申请时间</th>
+	    		<th data-col="projectName">申请服务</th>
+	    		<th data-col="repairFlag">返修</th>
+	    		<th data-col="responseTimes">响应次数</th>
+	    		<th data-col="outSourcIngFlag">外修</th>
+	    		<th data-col="responseTime">响应时间</th>
+	    		<th data-col="responseStaff">响应人员</th>
+	    		<th data-col="useTime">已用工时</th>
+	    		<th data-col="sendUserName">申请人</th>
+	    		<th data-col="reponseDepName">响应科室名称</th>
+	    		<th data-col="appraise">评价</th>
+	    		<th data-col="endTime">完成时间</th>
+	    		<th data-col="pickUser">取货人</th>
+	    		<th data-col="goodsName">物品名称</th>
+	    		<th data-col="pickdepName">所属部门</th>
+	    		<th data-col="state">状态</th>
+	    	</tr>
+	    	</thead>
+	    	<tbody id="tbody">
+	    	</tbody>
+	    </table>
+	     <script type="text/html" id="List">
+                        ##for(var i = 0;i <list.length;i++){ ##
+                         ##var item=list[i];## 
+						<tr data-id="{{item.id}}" data-status="{{item.status}}" class="row">
+						<td class="check"><input type="checkbox" class="selectRow"/></td>
+						<td class="depName">{{item.depName}}</td>
+						<td class="proposerTime" title="{{item.proposerTime}}">{{item.proposerTime}}</td>
+						<td class="projectName">{{item.projectName}}</td>
+						<td class="repairFlag">{{item.repairFlag}}</td>
+						<td class="responseTimes" title="{{item.responseTimes}}">{{item.responseTimes}}</td>
+						<td class="outSourcIngFlag">{{item.outSourcIngFlag}}</td>
+						<td class="responseTime" title="{{item.responseTime}}">{{item.responseTime}}</td>
+						<td class="responseStaff" title="{{item.responseStaff}}">{{item.responseStaff}}</td>
+						<td class="useTime">{{item.useTime}}</td>
+						<td class="sendUserName">{{item.sendUserName}}</td>
+						<td class="reponseDepName">{{item.reponseDepName}}</td>
+						<td class="appraise" >{{item.appraise}}</td>
+						<td class="endTime" title="{{item.endTime}}">{{item.endTime}}</td>
+						<td class="pickUser" >{{item.pickUser}}</td>
+						<td class="goodsName" >{{item.goodsName}}</td>
+						<td class="pickdepName" >{{item.pickdepName}}</td>
+						<td class="state" >{{item.state}}</td>
+						</tr>
+                            ##}##
+                    </script>
+                    
+                    <!-- 添加耗材管理 -->
+        <div id="suppliesDialog" class="dialog easyui-dialog" title="选择耗材"  style="width:500px;height:500px;">
+            部门：
+            <input type="text" name="" id="supDep">
+            <div id="suppliesDatagrid"></div>
+            <div class="butList" style="width:200px;">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save-s">
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close-s">
+            </div>
+        </div>
+        <!-- 通知物流部门 -->
+        <div class="dialog easyui-dialog" title="物流通知"  id="callLogistics" style="width:500px;height:450px;">
+            <table class="PopUpTableBorder" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font> 物流部门名称:</td>
+                        <td width="390px">
+                            <input type="text" name="" class="easyui-combobox" id="wuliuteam" value="" placeholder="" style="width: 96%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font> 物品名称:</td>
+                        <td width="390px">
+                            <input type="text" name="" id="wupinName" value="" placeholder="" style="width: 96%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400px" colspan="2" align="center">注释: 所有加
+                            <font color="#ff0000">*</font>为必填项
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="butList" style="margin: 20px auto;width:300px">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save-call">
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close-call">
+            </div>
+        </div>
+        <!-- 物流具体信息填写 -->
+        <div class="dialog easyui-dialog" title="物流具体信息填写" id="infoLogistics" closed="true" style="width:650px;height:400px;">
+            <table border="1" class="PopUpTableBorder" style="width:100%;">
+                <thead>
+                    <tr align="centter">
+                        <td style="text-align: center; width:250px;">抽血人</td>
+                        <td style="text-align: center;width:250px;">抽血床位</td>
+                        <td style="text-align: center;width:250px;">抽血时间</td>
+                        <td style="text-align: center;width:250px;">抽血科室</td>
+                        <td style="text-align: center;width:250px;">抽血数量</td>
+                        <td style="text-align: center;">
+                            <input type="button" value="添加" class="ButtonStyle_Blue" id="add">
+                        </td>
+                    </tr>
+                    <thead>
+                        <tbody id="tb">
+                            <tr class="lst">
+                                <td align="center">
+                                    <input type="text" style="width: 90%;" class="bloodUser">
+                                </td>
+                                <td align="center">
+                                    <input type="text" style="width: 90%;" class="bloodPos">
+                                </td>
+                                <td align="center">
+                                    <input type="text" style="width: 90%;" class="bloodDate easyui-datetimebox" />
+                                </td>
+                                <td align="center">
+                                    <input type="text" style="width: 90%;" class="bloodDep easyui-combobox">
+                                </td>
+                                <td align="center">
+                                    <input type="number" style="width: 90%;" min="1" class="bloodNum">
+                                </td>
+                                <td align="center">
+                                    <input type="button" value="删除" class="ButtonStyle_Blue del">
+                                </td>
+                            </tr>
+                            <tr id="pick">
+                                <td align="center" style="width:550px;">取货人姓名:</td>
+                                <td colspan="5" align="center">
+                                    <input id="pickUser" type="text" name="" value="" placeholder="" style="width: 90%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="width:550px;">取货人联系方式:</td>
+                                <td colspan="5" align="center">
+                                    <input id="pickPhone" type="text" name="" value="" placeholder="" style="width: 90%;">
+                                </td>
+                            </tr>
+                        </tbody>
+            </table>
+            <div class="butList" style="margin: 20px auto;width:300px">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save-info">
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close-info">
+            </div>
+        </div>
+        <!--  添加申请单-->
+        <div class="easyui-dialog" title="添加申请单" id="addServiceform" closed="true" style="width:500px;height:350px">
+        <div class="content-table-title">申请单管理</div>
+            <table class="PopUpTableBorder" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            申请人:
+                        </td>
+                        <td width="300px">
+                            <input id="proposerName" type="text" class="width100" disabled="disabled" value="${ username}"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            申请部门：
+                        </td>
+                        <td width="390px">
+                            <select id="shenqingdepartment2" class="width100" >
+                            	<option value ="请选择" data-id="0">请选择</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <script type="text/html" id="pro_dep">
+						 ##for(var i = 0;i <list.length;i++){ ##
+                         ##var item=list[i];## 
+							<option data-id="{{item.id}}" data-value="{{item.text}}">{{item.text}}</option>
+						   ##}##
+					</script>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            响应科室名称:
+                        </td>
+                        <td width="500px">
+                            <select id="responseDeptName" class="width100" >
+                            	<option value ="请选择" data-id="0">请选择</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            申请内容:
+                        </td>
+                        <td width="390px">
+                            <textarea id="mark"class="width100" ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400px" colspan="2" align="center">
+                            注释: 所有加
+                            <font color="#ff0000">*</font>为必填项
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="butList">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save_add"></input>
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close_add"></input>
+            </div>
+        </div>
+        <!-- 评价申请单 -->
+        <div class="dialog easyui-dialog" title="评价申请单" id="evaluateform" closed="true" style="width:500px;height:350px">
+            <table class="PopUpTableBorder" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font>
+                            完成时间:
+                        </td>
+                        <td width="390px">
+                            <input id="endtime" type="text" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font>
+                            响应时间:
+                        </td>
+                        <td width="390px">
+                            <input id="xiangyingtime" type="text" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font>
+                            申请部门:
+                        </td>
+                        <td width="390px">
+                            <input id="proposerDepName" type="text" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font>
+                            评价:
+                        </td>
+                        <td width="390px">
+                            <label>优:
+                                <input type="radio" name="a" class="mt" data-option="1" checked="checked">
+                            </label>
+                            <label>良:
+                                <input type="radio" name="a" class="mt" data-option="2">
+                            </label>
+                            <label>中:
+                                <input type="radio" name="a" class="mt" data-option="3">
+                            </label>
+                            <label>差:
+                                <input type="radio" name="a" class="mt" data-option="4">
+                            </label>
+                        </td>
+                        <!--  $('.mt').attr(' data-option') -->
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="150px">
+                            <font color="#ff0000">*</font>
+                            评价内容:
+                        </td>
+                        <td width="390px">
+                            <textarea id="mark1"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400px" colspan="2" align="center">
+                            注释: 所有加
+                            <font color="#ff0000">*</font>为必填项
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="butList">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save">
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close">
+            </div>
+        </div>
+        <!-- 选择服务 -->
+        <div class="dialog easyui-dialog" title="选择服务" id="selectProject" closed="true" style="width:500px;height:350px">
+            <table class="PopUpTableBorder" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            响应科室名称:
+                        </td>
+                        <td width="500px">
+                            <input id="responsedepname" name="dept"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            响应科室项目:
+                        </td>
+                        <td width="500px">
+                            <input id="responseDeptitem" name="dept"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400px" colspan="2" align="center">
+                            注释: 所有加
+                            <font color="#ff0000">*</font>为必填项
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="butList">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save_pro"></input>
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close_pro"></input>
+            </div>
+        </div>
+        <!-- 修改服务 -->
+        <div class="dialog easyui-dialog" title="修改服务" id="edit1Project" closed="true" style="width:500px;height:350px">
+            <table class="PopUpTableBorder" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            响应科室名称:
+                        </td>
+                        <td width="500px">
+                            <input id="repdepname" name="dept"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="PopUpTableTitle" width="200px">
+                            <font color="#ff0000">*</font>
+                            响应科室项目:
+                        </td>
+                        <td width="500px">
+                            <input id="responsedeptitem" name="dept"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400px" colspan="2" align="center">
+                            注释: 所有加
+                            <font color="#ff0000">*</font>为必填项
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="butList">
+                <input type="button" name="" value="保存" class="ButtonStyle_Blue" id="save_edit"></input>
+                <input type="button" name="" value="关闭" class="ButtonStyle_Blue" id="close_edit"></input>
+            </div>
+        </div>
+                    
+  	</div>
+  </body>
+    <script type="text/javascript" src="../../Js/json2.js"></script>
+   <script type="text/javascript" src="../../Js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../Js/underscore.js"></script>
+    <script type="text/javascript" src="../../Js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../common/serviceform/test.js"></script>
+</html>

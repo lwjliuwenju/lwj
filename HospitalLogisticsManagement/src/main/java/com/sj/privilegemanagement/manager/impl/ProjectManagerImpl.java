@@ -1,8 +1,13 @@
 package com.sj.privilegemanagement.manager.impl;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.CriteriaSpecification;
 
 import com.sj.privilegemanagement.dao.DepDao;
 import com.sj.privilegemanagement.dao.ProjectDao;
@@ -60,6 +65,19 @@ public class ProjectManagerImpl extends BaseManagerImpl<ProjectEntity>implements
 		map.put("projectName", projectName);
 		return projectDao.findList(hql, map);
 	}
-	
+	@Override
+	public List<Map<String, Object>> findbyfatherId(long depId, String fatherid) {
+		String sql ="SELECT p.* FROM hop_project p WHERE p.FATHER_ID_= '"+fatherid+"' and p.ENABLE_=1";
+		if(depId!=-1){
+			sql+=" and p.RESPONSE_DEPT_ID_='"+depId+"'";
+		}
+		Session session = this.getSession();
+		Query query = session.createSQLQuery(sql).setResultTransformer(CriteriaSpecification.ALIAS_TO_ENTITY_MAP);
+	    List<Map<String, Object>> list = query.list();
+		if(list!=null && list.size()>0){
+			return list;
+		}
+		return null;
+	}
 
 }

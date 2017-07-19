@@ -114,12 +114,46 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 	 * 
 	 * @return
 	 */
-	@Jurisdiction(name = "添加申请单")
+	@Jurisdiction(name = "添加")
 	public String addServiceform() {
 		setUrl("addServiceform");
 		return SUCCESS;
 	}
-
+	/**
+	 * 添加耗材
+	 */
+	public String addHaocai(){
+		setUrl("addHaocai");
+		return SUCCESS;
+	}
+	/**
+	 * 物流通知
+	 */
+	public String logistics(){
+		setUrl("logistics");
+		return SUCCESS;
+	}
+	/**
+	 * 物流填写
+	 */
+	public String logisticsWrite(){
+		setUrl("logisticsWrite");
+		return SUCCESS;
+	}
+	/**
+	 * 选择服务
+	 */
+	public String addService(){
+		setUrl("addService");
+		return SUCCESS;
+	}
+	/**
+	 * 修改服务
+	 */
+	public String editService(){
+		setUrl("editService");
+		return SUCCESS;
+	}
 	@Override
 	@Jurisdiction(level=-1,name="申请单管理")
 	public String index() {
@@ -139,7 +173,6 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 	 */
 	@Jurisdiction(name = "评价")
 	public String evaluateform() {
-		long id = this.getIntegerParameter("id");
 		setUrl("evaluateform");
 		return SUCCESS;
 	}
@@ -272,16 +305,16 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 		setUrl("detailform");
 		return SUCCESS;
 	}
-    /**
-     * 选择服务功能 元冬冬2017年6月14日08:39:41
-     */
+	/**
+	 * 选择服务功能 元冬冬2017年6月14日08:39:41
+	 */
 	public void saveproject(){
 		long responseDeptid = this.getIntegerParameter("responseDeptid");
-	    String responseDeptitem = this.getParameter("responseDeptitem");
-	    String projectIdT = this.getParameter("ProposerId");
-	    DepEntity depEntity = depManager.findById(responseDeptid);
-	    long projectId = 0;
-	    try {
+		String responseDeptitem = this.getParameter("responseDeptitem");
+		String projectIdT = this.getParameter("ProposerId");
+		DepEntity depEntity = depManager.findById(responseDeptid);
+		long projectId = 0;
+		try {
 			projectId = Long.valueOf(projectIdT);
 		} catch (Exception e) {
 			ProjectEntity projectEntity = new ProjectEntity();
@@ -296,14 +329,14 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 			projectManager.insert(projectEntity);
 			projectId = projectEntity.getId();
 		}
-	    long proId = this.getIntegerParameter("proId");
-	    Proposer proposer = proposerManager.findById(proId);
-	    proposer.setProjectId(projectId);
-	    proposer.setProjectName(responseDeptitem);
-	    proposer.setReponseDepId(responseDeptid);
-	    proposer.setResponseDepName(depEntity.getDepName());
-	    proposerManager.update(proposer);
-	    AjaxUtils.ajaxResponse(AjaxUtils.getSuccessMessage(null));
+		long proId = this.getIntegerParameter("proId");
+		Proposer proposer = proposerManager.findById(proId);
+		proposer.setProjectId(projectId);
+		proposer.setProjectName(responseDeptitem);
+		proposer.setReponseDepId(responseDeptid);
+		proposer.setResponseDepName(depEntity.getDepName());
+		proposerManager.update(proposer);
+		AjaxUtils.ajaxResponse(AjaxUtils.getSuccessMessage(null));
 	}
 	/**
 	 * 重写添加申请单 元冬冬 2017年5月16日15:11:59
@@ -321,9 +354,15 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 		DepEntity sendDepEntity = depManager.findById(Long.valueOf(sendDepId));
 		String userName = user.getUserName();
 		String mark = getRequest().getParameter("mark");
+		long serviceId = this.getIntegerParameter("serviceId");
 		long responseDeptid = this.getIntegerParameter("responseDeptid");
 		DepEntity depEntity = depManager.findById(responseDeptid);
 		Proposer proposer = new Proposer();
+		if(serviceId!=0){
+		  ProjectEntity projectEntity = projectManager.findById(serviceId);
+		  proposer.setProjectId(serviceId);
+		  proposer.setProjectName(projectEntity.getProjectName());
+		}
 		proposer.setReponseDepId(responseDeptid);
 		proposer.setResponseDepName(depEntity.getDepName());
 		proposer.setDepId(sendDepEntity.getId());
@@ -376,6 +415,7 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 	 * @throws IOException
 	 */
 	public void findAll() throws IOException {
+		long datet = new Date().getTime();
 		Map<String, String> param = new HashMap<String, String>();
 		Object userT = getRequest().getSession().getAttribute("userInfo");
 		User user = null;
@@ -415,6 +455,7 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 		param.remove("page");	
 		param.remove("rows");
 		int total = proposerManager.findByParam(param).size();
+		System.out.println("lwj:" + (new Date().getTime() - datet));
 		JSONArray jsonArray = new JSONArray();
 		for (Proposer proposer : proposers) {
 			JSONObject jsonObject = JSONUtils.toJSONObject(proposer);
@@ -441,26 +482,9 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 			//物品名称
 			jsonObject.put("goodsName", proposer.getGoodsName());
 			//部门
-			if(proposer.getGoodsteamId()!=null){
-			DepEntity depEntity = depManager.findById(proposer.getGoodsteamId());
-			if(depEntity==null){
-			jsonObject.put("pickdepName","admin");
-			}else{
-				jsonObject.put("pickdepName", depEntity.getDepName());
-			}
-			}else{
-				jsonObject.put("pickdepName", "");
-			}
+			jsonObject.put("pickdepName", proposer.getGoodsteamName());
 			// 响应人员
-			List<StaffOfProposer> staffs = staffOfProposerManager.findStaffByProId(proposer.getId());
-			StringBuffer responseStaffBuffer = new StringBuffer();
-			for (StaffOfProposer staff : staffs) {
-				responseStaffBuffer.append(staffManager.findById(staff.getStaffId()).getName() + ",");
-			}
-			String responseStaff="";
-			if(responseStaffBuffer.length()>0)
-			responseStaff = responseStaffBuffer.substring(0, responseStaffBuffer.length() - 1);
-			jsonObject.put("responseStaff", responseStaff);
+			jsonObject.put("responseStaff", proposer.getResponseStaffList());
 			// 完成工时
 			Date reponseDate = proposer.getResponseEndTime();
 			// 完成时间
@@ -469,6 +493,7 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 				reponseDate = new Date();
 			Date startDate = proposer.getCreateStamp();
 			long shijian = reponseDate.getTime() - startDate.getTime();
+			//已用工时
 			jsonObject.put("useTime",
 					DateUtil.getDateStringByLong(shijian));
 			// 申请人
@@ -476,7 +501,15 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 			// 响应科室名称
 			jsonObject.put("reponseDepName", proposer.getResponseDepName());
 			// 评价
-			jsonObject.put("appraise", proposer.getAppraise());
+			String appraise="";
+			switch (proposer.getAppraise()) {
+			case 1:appraise = "<span style='background-color:red;display:inline-block;width:100%;height:100%;padding:0px;color:#fff;line-height:2.4;'>优</span>";break;
+			case 2:appraise = "<span style='background-color:blue;display:inline-block;width:100%;height:100%;padding:0px;color:#fff;line-height:2.4;'>良</span>";break;
+			case 3:appraise = "<span style='background-color:#000;display:inline-block;width:100%;height:100%;padding:0px;color:#fff;line-height:2.4;'>中</span>";break;
+			case 4:appraise = "<span style='background-color:green;display:inline-block;width:100%;height:100%;padding:0px;color:#fff;line-height:2.4;'>差</span>";break;
+			default:appraise="未评价";break;
+		}
+			jsonObject.put("appraise", appraise);
 			// 状态
 			String proState = null;
 			if(proposer.getGqbj() == 1){
@@ -488,6 +521,7 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 			jsonObject.put("status", proposer.getStatus());
 			jsonArray.add(jsonObject);
 		}
+		System.out.println("lwj:" + (new Date().getTime() - datet));
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("rows", jsonArray);
 		jsonObject.put("total", total);
@@ -624,6 +658,7 @@ public class ProposerAction extends BaseAction<ProposerManager, Proposer> {
 		Proposer proposer = proposerManager.findById(proposerId);
 		proposer.setGoodsteamId(depId);
 		proposer.setGoodsName(goodsName);
+		proposer.setGoodsteamName(depManager.findById(depId).getDepName());
 		proposerManager.update(proposer);
 		AjaxUtils.ajaxResponse(AjaxUtils.getSuccessMessage(null));
 		List<Long> userIds = depManager.findUserIdByDepId(depId);

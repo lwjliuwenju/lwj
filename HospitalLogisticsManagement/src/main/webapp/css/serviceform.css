@@ -1,0 +1,173 @@
+ .timeline-header {
+        margin: 0;
+        color: #00c0ee;
+        border-bottom: 1px solid #f4f4f4;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.1;
+    }
+    .desc {
+  display:inline-block;
+  width: 55px;
+  text-align: right;;
+}
+    .timeline-body {
+        padding: 10px;
+    }
+    
+    .PopUpTableBorder {
+        border-collapse: collapse;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #a4d5e6;
+        -o-border-image: initial;
+        border-image: initial;
+        background-color: #eef9ff;
+        margin: 5px auto;
+    }
+    
+    .PopUpTableBorder .PopUpTableTitle {
+        background-color: #eef9ff;
+        text-align: right;
+    }
+    
+    .PopUpTableBorder td {
+        border-collapse: collapse;
+        line-height: 22px;
+        height:22px;
+        padding:4px 4px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #a4d5e6;
+        -o-border-image: initial;
+        border-image: initial;
+    }
+        .PopUpTableBorder .td {
+      width:100px;
+      text-align:center;
+      padding:0px;
+    }
+    
+    .ButtonStyle_Blue {
+        height: 22px;
+        line-height: 22px;
+        color: #000000;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #80b5dd;
+        -o-border-image: initial;
+        border-image: initial;
+        background: url(../imgages/button_bg_blue.gif) repeat-x;
+    }
+    .width{
+    	width:70%;
+    	}
+    .butList {
+        margin: 10px auto;
+        _text-align:center;
+        width: 300px;
+    }
+  	*{margin:0; padding:0;}
+  	body{font-size:12px;}
+  	.content-table{width: 100%;height: 100%; border:1px solid #95B8E7; overflow:hidden;}
+  	.content-table-title{width: 100%; background: #E0ECFF; padding:2px 0px; text-indent: 1em;font-size: 12px;font-weight: bold; color: #0E2D5F; height: 16px; line-height: 16px;}
+  	#data-table{background:#ccc; width: 100%; table-layout:fixed;}
+  	#data-table tr td,#data-table tr th{padding:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  	.xzzt{background:#ccc;}
+  	#qx{width: 15px;}
+  	#tc{left: 50%;top:50%;background-color: #E0ECFF;overflow:hidden; border-color: #95B8E7;display: none;z-index: 9001;padding:5px; position: absolute;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
+  	#tc .tc-title{font-size: 12px;font-weight: bold;color: #0E2D5F;height: 18px;line-height: 18px;}
+  	#tc .tc-content{overflow:hidden; border:1px solid #95B8E7; height: 90%; width: 100%; background:#fff;}
+  	#tc #tc-close{background: url('../images/panel_tools.png') no-repeat -16px 0px;width: 16px; height: 16px;overflow: hidden;z-index: 9002; position: absolute; top:5px; right: 10px;padding: 0;}
+  	#tc #tc-data{display:none;}
+  	.buttonList li{float:left;
+  	}
+  	.clear:after{
+  clear: both;
+  display: block;
+  height: 0px;
+  content: "";
+  visibility: hidden;
+}
+li{
+	list-style: none;
+}
+ .PopUpTableBorder input{
+	    border: 1px solid #95B8E7;
+	    height:100%;
+	    display:inline-block;
+}
+.buttonList .button{
+cursor: pointer;
+  	padding-left: 24px;
+  	padding-right: 2px;
+  	height: 26px;
+  	line-height:26px;
+  	border: 1px solid #bbb;  
+  	color:#444;
+  	background-color:#fff;
+  		}
+  		.buttonList .button1{
+cursor: pointer;
+line-height:26px;
+  	padding-left: 24px;
+  
+  	padding-right: 2px;
+  		_padding-left: 14px;
+  	_padding-right: 0px;
+  	height: 26px;
+  	border: 1px solid #bbb;  
+  	color:#444;
+  	background-color:#fff;
+  		}
+.search{
+	background: url(../../Js/themes/icons/search.png) no-repeat 5px center;
+}
+.add{
+background: url(../../Js/themes/icons/edit_add.png) no-repeat 5px center;
+}
+.seeDetail{
+background: url(../../Js/themes/icons/more.png) no-repeat 5px center;
+}
+.buttonList .evealute{
+background: url(../../Js/themes/icons/large_chart.png) no-repeat 5px center;
+padding-left: 40px;
+}
+
+.width100{
+	width:98%;
+}
+
+.buttonList .supplies{
+background: url(../../Js/themes/icons/large_shapes.png) no-repeat 5px center;
+padding-left:38px;
+}
+
+.end{
+background: url(../../Js/themes/icons/ok.png) no-repeat 5px center;
+}
+
+.call{
+background: url(../../Js/themes/icons/back.png) no-repeat 5px center;
+}
+.buttonList .write{
+background: url(../../Js/themes/icons/large_smartart.png) no-repeat 5px center;
+padding-left:38px;
+}
+.cancel{
+	background: url(../../Js/themes/icons/cancel.png) no-repeat 5px center;
+}
+.man{
+	background: url(../../Js/themes/icons/man.png) no-repeat 5px center;
+}
+.redo{
+	background: url(../../Js/themes/icons/redo.png) no-repeat 5px center;
+}
+.undo{
+	background: url(../../Js/themes/icons/undo.png) no-repeat 5px center;
+}

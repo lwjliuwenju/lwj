@@ -58,4 +58,13 @@ public interface ProposerManager extends BaseManager<Proposer> {
 	 * @return
 	 */
 	List<Proposer> findbyreponseDepId(long reponseDepId);
+
+	/**
+	 * 根据筛选条件查询数据
+	 * @param param
+	 * @param starttime
+	 * @param endtime
+	 * @return
+	 */
+	//public List<Map<String,Object>> findMapsByParam(Map<String,String> param,Date starttime,Date endtime);
 }

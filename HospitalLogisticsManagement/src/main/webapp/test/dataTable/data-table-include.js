@@ -1,0 +1,9 @@
+document.write('<script type="text/javascript" src="../../Js/jquery.min.js"></script>');
+document.write('<script type="text/javascript" src="dataTable/jquery.selectseach.min.js"></script>');
+document.write('<script type="text/javascript" src="dataTable/dcalendar.picker.js"></script>');
+document.write('<script type="text/javascript" src="fycj/jquery.page.js"></script>');
+document.write('<script type="text/javascript" src="dataTable/dataTable.js"></script>');
+document.write('<link rel="stylesheet" href="fycj/jquery.page.css"/>');
+document.write('<link rel="stylesheet" href="dataTable/dcalendar.picker.css"/>');
+document.write('<link rel="stylesheet" href="dataTable/dataTable.css"/>');
+document.write('<link rel="stylesheet" href="dataTable/common.css"/>');

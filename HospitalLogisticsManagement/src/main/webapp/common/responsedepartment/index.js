@@ -1,5 +1,4 @@
 $(function() {
-    var deps = JSON.parse(sessionStorage.getItem('deps'));
     var host = window.location.host;
     var windowPath = "http://" + host + "/";
     var deps = JSON.parse(sessionStorage.getItem('deps'));
@@ -159,54 +158,19 @@ $(function() {
     });
     /*生成申请单*/
     $("#insertServiceform").click(function() {
-    	$('#addServiceform').window('open').window('center');
-    });
-    $('#responseDeptName').combobox({
-        data: deps,
-        valueField: 'id',
-        textField: 'text',
-        filter: filterCombo,
-        onLoadSuccess:function(){
-       	 	var data = $(this).combobox('getData');
-            if (data.length > 0) {
-                //$(this).combobox('select', data[0].text);
-                $(this).combobox('select', data[0].id);
-            } 
-       }
-    });
-    $.post(windowPath+'dep_getdepartment.action',function(dataT){
-    	var data = JSON.parse(dataT);
-  	  	data.unshift({ "text": "请选择", "id": 0 });
-    	$('#shenqingdepartment2').combobox({
-        	data: data, 
-            valueField: 'id',
-            textField: 'text',
-            filter: filterCombo
-        });
-    });
-    $("#save_add").click(function() {
-        var mark = $("#mark").val();
-        var responseDeptid = $("#responseDeptName").combobox('getValue');
-        var sendDeptId = $("#shenqingdepartment2").combobox('getValue');
-        var url2 = windowPath+'proposer_saveProposer.action';
-        $.post(url2, {
-                mark: mark,
-                responseDeptid: responseDeptid,
-                sendDeptId: sendDeptId
-            },
-            function(data) {
-                var code = JSON.parse(data).code_;
-                if (code == '0') {
-                	 $.messager.alert('系统提示', '生成成功', 'info',function(){
-                		 location.reload();
-                	 });
-                } else {
-                	 $.messager.alert('系统提示', '生成失败', 'error');
-                }
-            });
-    });
-    $('#close_add').click(function(){
-    	$('#addServiceform').dialog('close');
+    	 $('body').append('<div id="addServiceform"></div>');
+         $('#addServiceform').dialog({
+             title: '生成申请单',
+             width: 600,
+             height: 400,
+             closed: false,
+             cache: false,
+             href: windowPath + 'reponse_generatefrom.action',
+             modal: true,
+             onClose: function() {
+                 $('#addServiceform').remove();
+             }
+         });
     });
     $("#fanxiu").click(function() {
         var rows = $("#responsedepartmentlist").datagrid('getSelected');
@@ -254,6 +218,10 @@ $(function() {
     });
     $("#qxgq").click(function() {
         var rows = $("#responsedepartmentlist").datagrid('getSelected');
+        if(rows.GQBJ_ != 1){
+        	$.messager.alert('系统提示', '无法取消挂起!', 'error');
+        	return;
+        }
         var proId = rows.ID_;
         $.messager.confirm('系统提示', '是否取消挂起?', function(r){
         	if (r){
@@ -272,10 +240,15 @@ $(function() {
     });
     function pqry() {
         var row = $('#responsedepartmentlist').datagrid('getSelected');
+        if(row == null){
+        	$.messager.alert('系统提示', '请选择你要操作的申请单!', 'error');
+        	return;
+        }
         if (row.STATUS_ >= 4) {
-            $.messager.alert('系统提示', '申请单只有在未完成状态才能改派!', 'error');
+            $.messager.alert('系统提示', '申请单只有在未完成状态才能派人!', 'error');
             return;
         }
+      
         var userid = sessionStorage.getItem("userid");
         $('#dg').datagrid({
             url: windowPath + 'staff_getdepartment.action?userid=' + userid,
@@ -308,7 +281,6 @@ $(function() {
             ],
             onLoadSuccess:function(row){//当表格成功加载时执行                 
                 var rowData = row.rows; 
-                console.log(row);
                 var rowT = $('#responsedepartmentlist').datagrid('getSelected');
                 var staffIds = rowT.staffIds.split(",");
                 $.each(rowData,function(idx,val){//遍历JSON  
@@ -323,16 +295,25 @@ $(function() {
         }
     }
     $("#sendrenyuan").click(function (){
+    	  var rows = $("#responsedepartmentlist").datagrid("getSelected");
+    	  if(rows.staffNames!=""){
+         	 $.messager.alert('系统提示', '申请单已经派人，不能再派人!', 'error');
+              return;
+ 		}
     	pqry()
     });
     $("#reassignment").click(function (){
+    	var rows = $("#responsedepartmentlist").datagrid("getSelected");
+   	  if(rows.staffNames==""){
+        	 $.messager.alert('系统提示', '申请单没有派人，不能改派!', 'error');
+             return;
+		}
     	pqry()
     });
     $("#reassignmentstaff").click(function() {
         var rows = $("#responsedepartmentlist").datagrid("getSelected");
         if (rows == null) {
             $.messager.alert('系统提示', '请选择你要改派人员的响应单!', 'warning');
-
             return;
         }
         var row = $("#dg2").datagrid("getSelections");
@@ -438,7 +419,7 @@ $(function() {
                 }
             });
         } else {
-        	$.messager.alert('系统提示', '该响应单无法进行完成操作，请联系管理员!', 'warning');
+        	$.messager.alert('系统提示', '只有完成或评价才能进行审核操作!', 'warning');
             return;
         }
 

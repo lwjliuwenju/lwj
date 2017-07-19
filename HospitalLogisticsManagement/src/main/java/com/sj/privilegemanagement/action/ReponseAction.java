@@ -93,7 +93,13 @@ public class ReponseAction extends BaseAction<ProposerManager, Proposer> {
 		setUrl("shenheform");
 		return SUCCESS;
 	}
-
+    /**
+     * 生成申请单跳转
+     */
+	public String generatefrom(){
+		setUrl("generatefrom");
+		return SUCCESS;
+	}
 	/**
 	 * 跳转派遣人员 2017年5月10日11:18:35 元冬冬
 	 * 
@@ -115,6 +121,7 @@ public class ReponseAction extends BaseAction<ProposerManager, Proposer> {
 		String repairReason = this.getParameter("repairReason");
 		Proposer proposer = proposerManager.findById(proId);
 		List<StaffOfProposer> staffofproposers = staffOfProposerManager.findStaffByProId(proId);
+		StringBuffer responseStaffBuffer = new StringBuffer();
 		proposer.setResponseTimes(proposer.getResponseTimes() + 1);
 		if(staffofproposers != null && staffofproposers.size() > 0){
 			 for (StaffOfProposer staffOfProposer : staffofproposers) {
@@ -149,14 +156,20 @@ public class ReponseAction extends BaseAction<ProposerManager, Proposer> {
 				staff.setNumber(staff.getNumber()+1);
 				staff.setStatus(staff.getStatus() + 1);
 				staffManager.update(staff);
+				responseStaffBuffer.append(staff.getName() + ",");
 			}else{
 					staffOfProposerT.setComplete(-1);
 					staffOfProposerManager.update(staffOfProposerT);
 					Staff staff = staffManager.findById(Long.valueOf(userId));
 					staff.setStatus(staff.getStatus() + 1);
 					staffManager.update(staff);
+					responseStaffBuffer.append(staff.getName() + ",");
 			}
 		}
+		String responseStaff="";
+		if(responseStaffBuffer.length()>0)
+			responseStaff = responseStaffBuffer.substring(0, responseStaffBuffer.length() - 1);
+		proposer.setResponseStaffList(responseStaff);
 		proposerManager.update(proposer);
 		DwrTest.sendMessageAuto(proposer.getUserId().toString(), "您有一条申请单已派人！");
 		DwrTest.sendMessageAuto("0", "您有一条申请单已派人！");
