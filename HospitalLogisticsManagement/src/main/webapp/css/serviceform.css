@@ -112,6 +112,16 @@ cursor: pointer;
   	color:#444;
   	background-color:#fff;
   		}
+  		.button{
+cursor: pointer;
+  	padding-left: 24px;
+  	padding-right: 2px;
+  	height: 24px;
+  	line-height:24px;
+  	border: 1px solid #bbb;  
+  	color:#444;
+  	background-color:#fff;
+  		}
   		.buttonList .button1{
 cursor: pointer;
 line-height:26px;
@@ -170,4 +180,7 @@ padding-left:38px;
 }
 .undo{
 	background: url(../../Js/themes/icons/undo.png) no-repeat 5px center;
+}
+.edit{
+	background: url(../../Js/themes/icons/pencil.png) no-repeat 5px center;
 }

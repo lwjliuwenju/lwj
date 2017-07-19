@@ -5,6 +5,7 @@ var url;
 var $tds;
 var dataAuto;
 var dataTotal;
+var qjData;
 
 $.fn.comSelect = function (linkUrl,key,val) {
     var $select = $('#' + $(this).selector);
@@ -41,13 +42,14 @@ function updatefy(){
 
 //加载表格数据
 function loaddata(data) {
-    data = jgData(JSON.parse(data))
+    data = jgData(JSON.parse(data));
+    qjData = data;
     $("#data-table tr td").parent().remove();
     dataTotal = data.total;
     var rows = data.rows;
     var tr = '';
     for (var int = 0; int < rows.length; int++) {
-        tr += "<tr class='row'><td><input class='xz' type='checkbox' /></td>";
+        tr += "<tr class='row'><td><input class='xz' col-id='" + int + "' type='checkbox' /></td>";
         jQuery.each($tds, function (i, td) {
             var tdCol = undefined;
             var col = td.getAttribute("data-col");
@@ -168,5 +170,9 @@ function initButton() {}
 //获取选中列
 function getSelectCol() {
     var $cols = $table.find(".xz:checked");
+    var arr = new Array();
+    for(var i = 0; i < $cols.length ; i++){
+        arr[i] = qjData[$cols[i].attr['col-id']];
+    }
     return $cols;
 }

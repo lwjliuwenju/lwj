@@ -46,4 +46,6 @@ public interface DepManager extends BaseManager<DepEntity>{
 	 * @return
 	 */
 	List<Long> findUserIdByDepId(long depId);
+
+	List<DepEntity> findbyparam(Map<String, String> param);
 }

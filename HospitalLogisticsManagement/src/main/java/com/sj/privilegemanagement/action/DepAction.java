@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -84,14 +86,31 @@ public class DepAction extends BaseAction<DepManager, DepEntity>{
 		String username = user.getUserName();
 		int page = this.getIntegerParameter("page");
 		int rows = this.getIntegerParameter("rows");
+		Map<String, String> param = new HashMap<String, String>();
+		String depname = this.getParameter("depname");
 		List<DepEntity> depEntities = null;
-		if("admin".equals(username)){
-			depEntities = depManager.findAll(page, rows, null);
-		}else{
-			depEntities = depManager.findByUserId(user.getId());
-		}
 		JSONObject jsonObject = new JSONObject();
 		JSONArray depArray = new JSONArray();
+		Long i =0l;
+		if(StringUtils.isBlank(depname)){
+		if("admin".equals(username)){
+			depEntities = depManager.findAll(page, rows, null);
+			 i = depManager.findCountNum();
+		}else{
+			depEntities = depManager.findByUserId(user.getId());
+			String hql = "select count(*) from DepEntity d,UserOfDepAdmin ud where ud.depId = d.id and ud.userId = '"+user.getId()+"'"
+					+ " and d.enable = true";
+			 i = depManager.findCountNum(hql);
+		}
+		}else{
+			param.put("page", String.valueOf(page));
+			param.put("rows", String.valueOf(rows));
+			param.put("depname", depname);
+			depEntities =depManager.findbyparam(param);
+			param.remove("page");	
+			param.remove("rows");
+			i =(long) depManager.findbyparam(param).size();
+		}
 		for (DepEntity dep : depEntities) {
 			JSONObject depJson = JSONObject.fromObject(dep);
 			List<Long> userIds = depManager.findUserIdByDepId(dep.getId());
@@ -104,7 +123,6 @@ public class DepAction extends BaseAction<DepManager, DepEntity>{
 				depJson.put("userName", buffer.substring(1));
 			depArray.add(depJson);
 		}
-		Long i = depManager.findCountNum();
 		jsonObject.put("rows", depArray);
 		jsonObject.put("total", i);
 		AjaxUtils.ajaxResponse(jsonObject.toString());

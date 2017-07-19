@@ -5,28 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-<table>
+<table class="tc-form-table" cellpadding="1" cellspacing="1">
     <tr>
-        <td>申请人：</td><td><input type="text" id="sqr" /></td>
+        <td class="text-align-right">申请人：</td><td class="text-align-left"><input class="input-style" type="text" id="sqr" /></td>
     </tr>
     <tr>
-        <td>申请部门：</td><td><input type="text" id="sqbm" /></td>
+        <td class="text-align-right">申请部门：</td><td class="text-align-left"><input class="input-style" type="text" id="sqbm" /></td>
     </tr>
     <tr>
-        <td>响应科室名称：</td><td><input type="text" id="xybm" /></td>
+        <td class="text-align-right">响应科室名称：</td><td class="text-align-left"><input class="input-style" type="text" id="xybm" /></td>
     </tr>
     <tr>
-        <td>服务：</td><td><input type="text" id="fw" /></td>
+        <td class="text-align-right">服务：</td><td class="text-align-left"><input class="input-style" type="text" id="fw" /></td>
     </tr>
     <tr>
-        <td>申请内容：</td><td><input type="text" id="sqnr" /></td>
+        <td class="text-align-right">申请内容：</td><td class="text-align-left"><input class="input-style" type="text" id="sqnr" /></td>
     </tr>
 </table>
-<input type="button" value="保存" />
-<input type="button" value="关闭" />
+<div class="buttons-save-close">
+    <input type="button" class="button" value="保存" />
+    <input type="button" class="button" value="关闭" />
+</div>
 </body>
 <script type="text/javascript" src="dataTable/data-table-include.js"></script>
 <script type="text/javascript">
-
+    var $cols = parent.getSelectCol();
+    console.log($cols);
 </script>
 </html>

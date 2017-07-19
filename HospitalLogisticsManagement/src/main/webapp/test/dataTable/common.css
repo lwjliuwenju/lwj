@@ -1,0 +1,26 @@
+
+.input-style{
+    border-radius: 20px;
+    border:1px solid #95B8E7;
+}
+.button{
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+    border:1px solid #95B8E7;
+}
+
+.buttons-save-close{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.text-align-left{
+    text-align: left;
+}
+

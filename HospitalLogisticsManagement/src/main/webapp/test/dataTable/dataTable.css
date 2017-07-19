@@ -106,3 +106,16 @@ td, .data-table tr th {
     border: 1px solid #95B8E7;
     height: 19px;
 }
+
+.tc-form-table{
+    background: #a4d5e6;
+    width: 100%;
+}
+
+.tc-form-table tr{
+}
+
+.tc-form-table tr td{
+    padding:5px;
+    background: #eef9ff;
+}

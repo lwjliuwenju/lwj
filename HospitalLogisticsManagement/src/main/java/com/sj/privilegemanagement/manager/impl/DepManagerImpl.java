@@ -14,6 +14,7 @@ import com.sj.privilegemanagement.dao.StaffDao;
 import com.sj.privilegemanagement.dao.UserDao;
 import com.sj.privilegemanagement.dao.UserOfDepDao;
 import com.sj.privilegemanagement.entity.DepEntity;
+import com.sj.privilegemanagement.entity.Proposer;
 import com.sj.privilegemanagement.entity.Staff;
 import com.sj.privilegemanagement.entity.User;
 import com.sj.privilegemanagement.entity.UserOfDepAdmin;
@@ -184,6 +185,25 @@ public class DepManagerImpl extends BaseManagerImpl<DepEntity> implements
 			list.add(userOfDepAdmin.getUserId());
 		}
 		return list;
+	}
+	@Override
+	public List<DepEntity> findbyparam(Map<String, String> param) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String depname = param.get("depname");
+		String sql ="SELECT * from hop_dep d where d.ENABLE_=1";
+		if(StringUtils.isNotBlank(depname)){
+			sql+=" and d.DEP_NAME_ LIKE :depname";
+			map.put("depname", "%" + depname + "%");
+		}
+		String page = param.get("page");
+		String rows = param.get("rows");
+		List<DepEntity> maps = null;
+		if(StringUtils.isBlank(rows) || StringUtils.isBlank(page)){
+			page = "0";
+			rows = "0";
+		}
+		maps = depDao.findListBeanBySql(DepEntity.class,sql, map, Integer.valueOf(page.toString()), Integer.valueOf(rows.toString()));
+		return maps;
 	}
 
 }

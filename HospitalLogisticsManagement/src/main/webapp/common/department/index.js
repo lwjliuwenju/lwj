@@ -47,10 +47,30 @@ $(function() {
         displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录',
         onSelectPage: function(pageNumber, pageSize) {
             $(this).pagination('loading');
-            $('#departmentlist').datagrid('options').url = windowPath + 'dep_findAlllist.action?page=' + pageNumber + '&rows=' + pageSize;
+            $('#departmentlist').datagrid('options').url = windowPath + 'dep_findAll.action?page=' + pageNumber + '&rows=' + pageSize;
             $('#departmentlist').datagrid('reload');
             $(this).pagination('loaded');
         }
+    });
+    $("#searchDep").click(function() {
+    	 var depname =$("#depname").val();
+        $('#departmentlist').datagrid({
+            url: windowPath + 'dep_findAll.action',
+            queryParams: {
+            	'depname':depname
+            }
+        });
+        $('#departmentlist').datagrid('getPager').pagination({
+            beforePageText: '第', //页数文本框前显示的汉字 
+            afterPageText: '页  ， 共 {pages} 页',
+            displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录',
+            onSelectPage: function(pageNumber, pageSize) {
+                $(this).pagination('loading');
+                $('#departmentlist').datagrid('options').url = windowPath + 'dep_findAll?page=' + pageNumber + '&rows=' + pageSize + '&depname=' + depname;
+                $('#departmentlist').datagrid('reload');
+                $(this).pagination('loaded');
+            }
+        });
     });
     $('#close').click(function() {
         $("#insertDepartmentDialog").dialog('close');

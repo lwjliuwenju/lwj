@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="../../Js/themes/default/easyui.css" />
     <link rel="stylesheet" type="text/css" href="../../Js/themes/icon.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="../../common/user/addUser.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/serviceform.css">
  <script type="text/javascript" src="../../Js/jquery.min.js"></script>
    <!--[if lt IE 9]>
    <script type="text/javascript" src='../../Js/json2.js'></script>
@@ -15,8 +15,17 @@
 <script type="text/javascript" src="../../common/department/index.js"></script>
 <div class="departmentIndex">
 		<div align="left" id="departmentTools">
-		   <a id="insertDepartment" iconCls="icon-add" href="javascript:void(0)" class="easyui-linkbutton">添加科室</a>
-		   <a id="setkezhang" iconCls="icon-edit" href="javascript:void(0)" class="easyui-linkbutton">设置科长</a>
+			<label class="desc">科室名称:</label> 
+            <input id="depname" style="width:200px;margin:2px 0px;height:24px;"></input> 
+            <input type="button" class="search button" name="" id="searchDep" value="查询"  style="margin:2px 0px;">
+                 <ul class="buttonList clear">
+        	<li>
+        		<input type="button" class="add button" name="" value="添加科室" id="insertDepartment">
+        	</li>
+        		<li>
+        		<input type="button" class="edit button" name="" value="设置科长" id="setkezhang">
+        	</li>
+        </ul>
 		</div>
 		<div class="departmentlist">
 			<div id='departmentlist'></div>
